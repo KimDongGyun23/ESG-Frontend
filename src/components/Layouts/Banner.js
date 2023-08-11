@@ -1,18 +1,21 @@
 import styled from "styled-components";
-import mainbg from '../img/mainbg.jpg';
+import banner from '../../img/banner.png';
 
 // 메인 이미지
 const MainImg = styled.div`
-  height : 350px;
-  background-image : url(${mainbg});
+  height : 356px;
+  background-image : url(${banner});
   background-size : cover;
+  background-position : center;
+  background-repeat : no-repeat;
   position : relative;
   margin-bottom : 50px;
 `;
 
 // 내부 Title
 const MainTitle = styled.div`
-  width : 30%;
+  width : 503px;
+  height : 178px;
   border-radius : 20px 20px 0 0;
   background : white;
   position : absolute;
@@ -20,12 +23,12 @@ const MainTitle = styled.div`
   left : 0;
   right : 0;
   margin : 0 auto;
-  padding : 10px;
+  padding : 35px;
   text-align : center;
 `;
 
 // 메인 배경
-function MainBg(props){
+function Banner(props){
   return(
     <MainImg>
       <MainTitle>
@@ -36,4 +39,4 @@ function MainBg(props){
   )
 };
 
-export default MainBg;
+export default Banner;

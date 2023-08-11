@@ -6,46 +6,7 @@ import styled from "styled-components";
 // 로그인 박스 스타일
 const LoginBox = styled.div`
   display : flex;
-  border-left : 1px solid rgb(156, 156, 156);
   align-items : center;
-
-  @media (max-width : 992px){
-    display : none;
-  }
-`;
-
-// 992px 이상일 때, Navbar에 노출 
-const LargeNav = styled(Nav)`
-  justify-content : center;
-
-  @media (max-width : 992px){
-    display : none;
-  }
-`;
-
-// 992px 미만일 때, dropdown에 노출
-const SmallNav = styled(Nav)`
-  display : none;
-  font-size : 13px;
-  line-height: 2em;
-  background : #f3ece8;
-  color : rgb(148, 90, 21);
-  padding : 10px 0;
-  text-align : center;
-
-  @media (max-width : 992px){
-    display : block;
-  }
-`;
-
-const BtnDropDown = styled.button`
-  display : none;
-  border : none;
-  background : inherit;
-  
-  @media (max-width : 992px){
-    display : block;
-  }
 `;
 
 // 로그인 했을 경우 프로필
@@ -60,19 +21,6 @@ function Profile(props){
   )
 };
 
-function NavList(props){
-  return(
-    <props.tag>
-      <Nav.Link href="/">ESG정보</Nav.Link>
-      <Nav.Link href="/evaluation">ESG평가지표</Nav.Link>
-      <Nav.Link href="#pricing">기업동향</Nav.Link>
-      <Nav.Link href="#pricing">맞춤서비스</Nav.Link>
-      <Nav.Link href="/community">커뮤니티</Nav.Link>
-      <Nav.Link href="#pricing">기부하기</Nav.Link>
-    </props.tag>
-  )
-};
-
 /**
  * < Header >
  * 부트스트랩 Navbar 사용
@@ -80,32 +28,31 @@ function NavList(props){
  * 로그인 상태에 따라 프로필 표기
  */
 function Header(){
-  let [logOn, setLogOn] = useState(true);
-  let [dropdown, setDropdown] = useState(false);
+  let [logOn, setLogOn] = useState(false);
 
   return(
     <>
-      <Navbar bg="light" data-bs-theme="light">
+      <Navbar className='my-3 justify-space-between' data-bs-theme="light">
         <Container>
-          <Navbar.Brand className="col-lg-2" href="/">LOVESG</Navbar.Brand>
-          
-          <NavList tag={LargeNav} className="col-lg-8"/>
-          <LoginBox className='col-lg-2'>
+          <Navbar.Brand href="/">LOVESG</Navbar.Brand>          
+          <Nav>
+            <Nav.Link className='me-4' href="/">HOME</Nav.Link>
+            <Nav.Link className='me-4' href="/esg">나의ESG</Nav.Link>
+            <Nav.Link className='me-4' href="/learning">ESG학습</Nav.Link>
+            <Nav.Link className='me-4' href="/community">포럼</Nav.Link>
+            <Nav.Link href="/introduce">LOVESG소개</Nav.Link>
+          </Nav>
+          <LoginBox>
             { 
               logOn == false 
-              ? <a href='/login' className='ms-auto'>Login</a>
+              ? <a href='/login' className='ms-auto text-decoration-none'>로그인</a>
               : <Profile setLogOn={setLogOn}/> 
             }
-            <div className='ps-3'><i className="fa-regular fa-moon"></i></div>
           </LoginBox>
 
-          <BtnDropDown onClick={()=>{setDropdown((prevVisible) => !(prevVisible)) }}>
-            <i className="fa-solid fa-bars"></i>
-          </BtnDropDown>
           
         </Container>
       </Navbar>
-      {dropdown && ( <NavList tag={SmallNav}/> )}
     </>
   )
 }

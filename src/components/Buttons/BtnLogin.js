@@ -2,19 +2,19 @@ import { styled } from "styled-components";
 
 // Register 버튼
 // 마우스 올릴 시 이벤트 추가
-const BtnRegister = styled.button`
+const BtnLogin = styled.button`
   width : 50%;
   float : right;
   padding: 15px;
-  background-color: rgb(148, 90, 21);
+  background-color: #73BCFF;
   border : none;
   border-radius : 50px;
-  color: #f3ece8;
+  color: white;
   cursor: pointer;
 
   &:hover{
-    background-color: #f3ece8;
-    color : rgb(148, 90, 21);
+    background-color: #BCDFFF;
+    color : black;
   }
 
   &::after{
@@ -24,4 +24,4 @@ const BtnRegister = styled.button`
   }
 `;
 
-export default BtnRegister;
+export default BtnLogin;
