@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import mainbg from '../img/mainbg.jpg';
+import mainbg from '../assets/mainbg.jpg';
 
 // 메인 이미지
 const MainImg = styled.div`

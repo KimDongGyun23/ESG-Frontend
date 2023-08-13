@@ -1,8 +1,8 @@
 import { Container } from "react-bootstrap";
 import { styled } from "styled-components";
-import article from '../../img/article.jpg';
-import MainBg from "../MainBg";
-import BtnMove from "../BtnMove"
+import article from '../assets/article.jpg';
+import MainBg from "../components/MainBg";
+import BtnMove from "../components/BtnMove"
 
 // Title 박스
 const TitleBox = styled.div`

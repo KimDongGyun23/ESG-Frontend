@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { styled } from "styled-components";
-import MainBg from "../MainBg";
-import profile from '../../img/profile.png';
+import MainBg from "../components/MainBg.js";
+import profile from '../assets/profile.png';
 
 // 개인 프로필 정보 임시 데이터
 let teamId = [
