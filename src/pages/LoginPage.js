@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { styled } from "styled-components";
-import MainBg from "../MainBg";
-import SignIn from "../SignIn";
-import Login from "../Login";
+import MainBg from "../components/MainBg";
+import SignIn from "../components/SignIn";
+import Login from "../components/Login";
 
 // 로그인, 회원가입 버튼
 const Btn = styled.button`

@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import MainBg from "../MainBg";
+import MainBg from "../components/MainBg";
 import { Container } from "react-bootstrap";
 import { useState } from "react";
 
@@ -18,11 +18,12 @@ const TheadStyle = styled.thead`
   font-weight : bold;
 `;
 
-function EvaluationPage(){
+function CommunityPage(){
   let [num, setNum ] = useState([0,0,0,0,0]);
+
   return(
     <>
-      <MainBg title="Evaluation Index" subtitle="기업 평가 지표"/>
+      <MainBg title="Community" subtitle="우리들의 대화공간"/>
 
       <Container>
         <h3 className="mb-5">ESG 기업 정보</h3>
@@ -30,9 +31,9 @@ function EvaluationPage(){
           <TheadStyle>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">기업 이름</th>
-              <th scope="col">평가 등급</th>
-              <th scope="col">추천</th>
+              <th scope="col">제목</th>
+              <th scope="col">작성자</th>
+              <th scope="col">조회수</th>
             </tr>
           </TheadStyle>
           <tbody>
@@ -61,4 +62,4 @@ function EvaluationPage(){
   )
 };
 
-export default EvaluationPage;
+export default CommunityPage;

@@ -1,11 +1,11 @@
 import Header from './components/Layouts/Header';
 import Footer from './components/Layouts/Footer';
-import MainPage from './components/Pages/MainPage';
-import LoginPage from './components/Pages/LoginPage';
-import ErrorPage from './components/Pages/ErrorPage';
-import CommunityPage from './components/Pages/CommunityPage';
-import EvaluationPage from './components/Pages/EvaluationPage';
-import TeamPage from './components/Pages/TeamPage';
+import MainPage from './pages/MainPage';
+import LoginPage from './pages/LoginPage';
+import ErrorPage from './pages/ErrorPage';
+import CommunityPage from './pages/CommunityPage';
+import EvaluationPage from './pages/EvaluationPage';
+import TeamPage from './pages/TeamPage';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
