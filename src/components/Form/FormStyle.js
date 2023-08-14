@@ -10,6 +10,7 @@ const BoxStyle = styled.div`
 `;
 
 const InputStyle = styled.input`
+  width : 100%;
   border : none;
 
   &:focus{
