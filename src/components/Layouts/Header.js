@@ -24,7 +24,6 @@ function Profile(props){
 /**
  * < Header >
  * 부트스트랩 Navbar 사용
- * 992px를 기준으로 상단 링크들의 가시성 여부 결정 / 반응형
  * 로그인 상태에 따라 프로필 표기
  */
 function Header(){
