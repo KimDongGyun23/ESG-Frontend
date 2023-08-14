@@ -1,9 +1,9 @@
 import Header from './components/Layouts/Header';
 import Footer from './components/Layouts/Footer';
-import MainPage from './components/Pages/MainPage';
-import LoginPage from './components/Pages/LoginPage';
-import ErrorPage from './components/Pages/ErrorPage';
-import IntroducePage from './components/Pages/IntroducePage';
+import MainPage from './pages/MainPage';
+import LoginPage from './pages/LoginPage';
+import ErrorPage from './pages/ErrorPage';
+import IntroducePage from './pages/IntroducePage';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 

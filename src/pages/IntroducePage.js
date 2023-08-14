@@ -1,7 +1,12 @@
 import { Container } from "react-bootstrap";
 import { styled } from "styled-components";
+<<<<<<<< HEAD:src/pages/IntroducePage.js
 import Banner from "../Layouts/Banner";
 import profile from '../../img/profile.png';
+========
+import MainBg from "../components/MainBg.js";
+import profile from '../assets/profile.png';
+>>>>>>>> upstream/main:src/pages/TeamPage.js
 
 // 개인 프로필 정보 임시 데이터
 let teamId = [
