@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { Container } from "react-bootstrap";
 import errorimg from '../assets/errorpage.png';
-import BtnMove from "../components/BtnMove"
+import BtnMove from "../components/Buttons/BtnMove"
 
 // Text 박스
 const TextBox = styled.div`

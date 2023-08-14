@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import banner from '../../img/banner.png';
+import banner from '../../assets/banner.png';
 
 // 메인 이미지
 const MainImg = styled.div`
