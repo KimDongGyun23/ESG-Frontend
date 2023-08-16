@@ -20,8 +20,11 @@ const InnerWrapper = styled.div`
   grid-template-columns : 1fr 1fr;
 `;
 
-// Footer
-// 좌우 2열 + 하단 구성
+
+/**
+ * < Footer >
+ * 좌우 2열 + 하단 구성
+ */
 function Footer(){
   return(
     <OuterWrapper>

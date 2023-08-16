@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import banner from '../../assets/banner.png';
 
-// 메인 이미지
-const MainImg = styled.div`
+// 배너 이미지
+const BannerImg = styled.div`
   height : 356px;
   background-image : url(${banner});
   background-size : cover;
@@ -13,7 +13,7 @@ const MainImg = styled.div`
 `;
 
 // 내부 Title
-const MainTitle = styled.div`
+const BannerTitle = styled.div`
   width : 503px;
   height : 178px;
   border-radius : 20px 20px 0 0;
@@ -27,15 +27,15 @@ const MainTitle = styled.div`
   text-align : center;
 `;
 
-// 메인 배경
+// Banner
 function Banner(props){
   return(
-    <MainImg>
-      <MainTitle>
+    <BannerImg>
+      <BannerTitle>
         <h2 className="m-3 fs-1">{props.title}</h2>
         <p className="fs-5">{props.subtitle}</p>
-      </MainTitle>
-    </MainImg>
+      </BannerTitle>
+    </BannerImg>
   )
 };
 

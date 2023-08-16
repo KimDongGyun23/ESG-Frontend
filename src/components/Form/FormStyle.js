@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// 입력 form 스타일
 const BoxStyle = styled.div`
   display : flex;
   justify-content : space-between;

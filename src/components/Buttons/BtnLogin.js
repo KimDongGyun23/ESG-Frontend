@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
-// Register 버튼
-// 마우스 올릴 시 이벤트 추가
+// 회원가입, 로그인 버튼
 const BtnLogin = styled.button`
   width : 50%;
   float : right;
@@ -18,7 +17,7 @@ const BtnLogin = styled.button`
   }
 
   &::after{
-    content : '';
+    content : ' ';
     display : block;
     clear : both;
   }
