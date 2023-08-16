@@ -7,8 +7,11 @@ import { BoxStyle, InputStyle } from "./FormStyle";
 import axios from "axios";
 import { useState } from "react";
 
-// 로그인 페이지에서 회원가입 선택 시
+// 회원가입 선택 시
 function SignIn(props){
+
+  //////////////////////////////////////////////
+  /*          axios 통신 테스트 부분          */
 
   const [profile, setProfile] = useState({
     email : "", 
@@ -17,28 +20,38 @@ function SignIn(props){
     password2 : ""
   });
 
+  // 입력한 값을 post로 전송함
+  // jsonplaceholder에 전송 성공까지만 확인됨
   function PostFunc( profile ){
     return(
       axios
-      .post("http://localhost:3000/login", {
+      .post("https://jsonplaceholder.typicode.com/posts", {
         email : profile.email, 
         username : profile.username, 
         password1 : profile.password1, 
         password2 : profile.password2
       })
+
+      // 전송 성공 시
       .then(function (response) {
-        console.log("성공");
+        console.log(response);
       })
+
+      // 전송 실패시 
       .catch(function (error) {
         console.log("실패");
       })
     )
   }
 
-
+  /**
+ * < SignIn >
+ * Form.Group ( 이메일, 이름, 비밀번호, 비밀번호 확인 )
+ */
   return(
     <Container className="w-50 my-5 py-5" style={{maxWidth : "600px"}}>
       <Form className="d-flex-column">
+
         <Form.Group className="mb-4" controlId="formEmail">
           <Form.Label>이메일 주소</Form.Label>
           <BoxStyle>
@@ -73,8 +86,7 @@ function SignIn(props){
           </BoxStyle>
         </Form.Group>
 
-        <BtnLogin  type="submit" className="float-clear" onClick={()=>PostFunc(profile)}>
-          가입하기
+        <BtnLogin  type="submit" className="float-clear" onClick={()=>PostFunc(profile)}>가입하기
         </BtnLogin>
       </Form>
     </Container>

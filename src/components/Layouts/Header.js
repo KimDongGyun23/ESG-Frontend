@@ -21,10 +21,11 @@ function Profile(props){
   )
 };
 
+
 /**
  * < Header >
  * 부트스트랩 Navbar 사용
- * 로그인 상태에 따라 프로필 표기
+ * 로그인 상태에 따라 프로필 표기 ( 차후 수정 )
  */
 function Header(){
   let [logOn, setLogOn] = useState(false);
@@ -47,9 +48,7 @@ function Header(){
               ? <a href='/login' className='ms-auto text-decoration-none'>로그인</a>
               : <Profile setLogOn={setLogOn}/> 
             }
-          </LoginBox>
-
-          
+          </LoginBox>          
         </Container>
       </Navbar>
     </>
