@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# LOVESG
+알기쉬운 ESG 정보 제공 및 사용자 관심 키워드를 통한 맞춤 기업 추천 웹 서비스  
+<br><br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 😘 커밋 기록
 
-## Available Scripts
+### 1️⃣ 7/29
+- 현재까지 구현된 피그마를 구현한 첫번째 데모버전  
 
-In the project directory, you can run:
+### 2️⃣ 8/10
+#### 수정 사항
+1. src 폴더 구조 수정  
+2. 삽입되는 이미지의 변경
+3. 피그마 수정에 따른 컴포넌트 수정  
+4. 로그인 폼 수정  
+5. 헤더 변경  
 
-### `npm start`
+#### 추가적인 학습 내용
+- Postman을 이용하여 서버와의 통신 연결 학습  
+- JavaScript와 React의 이벤트 및 이벤트 처리 과정 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3️⃣ 8/14
+#### 수정 사항
+- 프로젝트의 폴더 구조 수정  
+- postman을 통하여 서버와의 통신 테스트  
+- 로그인 버튼을 누를 시에 postman의 데이터를 가져와 id, password 정보 비교
+- 각각에 맞는 알림창 출력
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### 추가적인 학습 내용
+- post 방식에 대한 학습  
+- post를 통하여 회원가입 내용을 서버로 전송하는 방법  
 
-### `npm test`
+### 3️⃣ 8/16
+#### 수정 사항
+- post 방법 테스트  
+- jsonplaceholder에 post 성공 유무 확인  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### 추가적인 학습 내용
+- 회원가입 내용이 서버에 존재하는지 확인  
+- redux 학습
