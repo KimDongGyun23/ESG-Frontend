@@ -1,10 +1,10 @@
-import { Container, Form } from "react-bootstrap";
-import BtnLogin from "../Buttons/BtnLogin";
-import { BoxStyle, InputStyle } from "./FormStyle";
-import { Link, useNavigate } from 'react-router-dom';
-import Validation from "./LoginValidation";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { Container, Form } from "react-bootstrap";
+import { BoxStyle, InputStyle } from "./FormStyle";
+import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import BtnLogin from "../Buttons/BtnLogin";
+import Validation from "./LoginValidation";
 
 
 // 로그인 버튼 선택 시
@@ -33,11 +33,12 @@ function Login(){
 
     console.log('Entered:', values);
 
+    // 이메일과 비밀번호 입력 조건 만족 시, 로그인 진행
     if (!validationErrors.email && !validationErrors.password) {
         try {
             const res = await axios.post('http://localhost:8081/login', values);
             console.log('Got:', res.data);
-            if (res.data === "Success") {
+            if (res.data === "Success") { // backend에서 보낸 Success 확인
                 navigate('/');
             } else {
                 alert("No record existed");
