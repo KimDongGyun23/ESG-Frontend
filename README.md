@@ -59,7 +59,7 @@
 - LoginValidation.js 생성, 로그인 입력 제약 조건 생성
 - SignInValidation.js 생성, 회원가입 입력 제약 조건 생성
 
-### 4️⃣ 9/2
+### 5️⃣ 9/2
 
 #### 수정 사항
 
