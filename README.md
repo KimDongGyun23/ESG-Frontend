@@ -68,3 +68,11 @@
 - S-dot naming 사용하여 각각의 스타일을 별도 파일로 관리
 - 반응형을 위해 rem 단위 적용
 - [노션](https://www.notion.so/chaerim0626/PR-2-5c90bf113d1a42b0b452af98a0b09147) 참조
+
+### 6️⃣ 9/4
+
+#### 수정 사항
+
+- 화면 크기 조절 시, 깨지는 UI 수정
+- 모바일 미디어쿼리 480px로 수정
+- [노션](https://www.notion.so/chaerim0626/PR-3-cd8e7d20fcae4c8dbac01a5b809020c0) 참조
