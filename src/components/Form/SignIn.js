@@ -1,6 +1,5 @@
-import { Container, Form } from "react-bootstrap";
-import BtnLogin from "../Buttons/BtnLogin";
-import { BoxStyle, InputStyle } from "./FormStyle";
+import { Form } from "react-bootstrap";
+import * as S from "../../styles/Form/Form.style";
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
@@ -67,47 +66,62 @@ const handleSubmit = (event) => {
  * Form.Group ( 이메일, 이름, 비밀번호, 비밀번호 확인 )
  */
   return(
-    <Container className="w-50 my-5 py-5" style={{maxWidth : "600px"}}>
-      <Form className="d-flex-column" onSubmit={handleSubmit}>
+    <S.FormContainer>
+      <Form onSubmit={handleSubmit}>
 
-        <Form.Group className="mb-4" controlId="formEmail">
+        <Form.Group controlId="formEmail">
           <Form.Label>이메일 주소</Form.Label>
-          <BoxStyle>
-            <InputStyle type="email" placeholder="Enter your Email Address" name='email' 
-              onChange={handleInput}/>
-          </BoxStyle>
+          <S.InputBox>
+            <S.Input 
+              type="email" 
+              placeholder="Enter your Email Address" 
+              name='email' 
+              onChange={handleInput}
+            />
+          </S.InputBox>
         </Form.Group>
 
-        <Form.Group className="mb-4" controlId="formUserName">
+        <Form.Group controlId="formUserName">
           <Form.Label>사용자 이름</Form.Label>
-          <BoxStyle>
-            <InputStyle type="text" placeholder="Enter your User Name" name='name'
-              onChange={handleInput}/>
-          </BoxStyle>
+          <S.InputBox>
+            <S.Input 
+              type="text" 
+              placeholder="Enter your User Name" 
+              name='name'
+              onChange={handleInput}
+            />
+          </S.InputBox>
         </Form.Group>
 
-        <Form.Group className="mb-4" controlId="formPassword">
+        <Form.Group controlId="formPassword">
           <Form.Label>비밀번호</Form.Label>
-          <BoxStyle>
-            <InputStyle type="password" placeholder="Enter Your Password" name='password1'
-              onChange={handleInput}/>
+          <S.InputBox>
+            <S.Input 
+              type="password" 
+              placeholder="Enter your Password" 
+              name='password1'
+              onChange={handleInput}
+            />
             <i className="fa-solid fa-eye-slash"></i>
-          </BoxStyle>
+          </S.InputBox>
         </Form.Group>
 
-        <Form.Group className="mb-4" controlId="formPasswordCheck">
+        <Form.Group controlId="formPasswordCheck">
           <Form.Label>비밀번호 확인</Form.Label>
-          <BoxStyle>
-            <InputStyle type="password" placeholder="Enter Your Password" name='password2'
-              onChange={handleInput}/>
+          <S.InputBox>
+            <S.Input 
+              type="password" 
+              placeholder="Enter your Password" 
+              name='password2'
+              onChange={handleInput}
+            />
             <i className="fa-solid fa-eye-slash"></i>
-          </BoxStyle>
+          </S.InputBox>
         </Form.Group>
 
-        <BtnLogin  type="submit" className="float-clear">가입하기
-        </BtnLogin>
+        <S.BtnLogin type="submit">가입하기</S.BtnLogin>
       </Form>
-    </Container>
+    </S.FormContainer>
   )
 };
 
