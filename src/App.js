@@ -1,6 +1,6 @@
 import Header from './components/Layouts/Header';
 import Footer from './components/Layouts/Footer';
-import MainPage from './pages/MainPage';
+import MainPage from './pages/MainPage/MainPage';
 import LoginPage from './pages/LoginPage';
 import ErrorPage from './pages/ErrorPage';
 import IntroducePage from './pages/IntroducePage';

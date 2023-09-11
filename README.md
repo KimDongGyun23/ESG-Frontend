@@ -58,3 +58,13 @@
 - SignIn 코드 수정 및 test (XAMPP db 이용한 post)
 - LoginValidation.js 생성, 로그인 입력 제약 조건 생성
 - SignInValidation.js 생성, 회원가입 입력 제약 조건 생성
+
+### 5️⃣ 9/2
+
+#### 수정 사항
+
+- MainPage 내부 컴포넌트 쪼개기, 디자인 변경
+- style 폴더 생성하여 폴더 구조 재정비
+- S-dot naming 사용하여 각각의 스타일을 별도 파일로 관리
+- 반응형을 위해 rem 단위 적용
+- [노션](https://www.notion.so/chaerim0626/PR-2-5c90bf113d1a42b0b452af98a0b09147) 참조
