@@ -9,7 +9,7 @@ export const BannerImg = styled.div`
   background-position : center;
   background-repeat : no-repeat;
   position : relative;
-  margin-bottom : 10rem;
+  margin-bottom : 7rem;
 `;
 
 // 내부 Title
