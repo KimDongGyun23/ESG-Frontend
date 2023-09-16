@@ -1,9 +1,9 @@
+import { Form } from "react-bootstrap";
+import * as S from "../../styles/Form/Form.style";
+
 import axios from "axios";
-import { Container, Form } from "react-bootstrap";
-import { BoxStyle, InputStyle } from "./FormStyle";
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
-import BtnLogin from "../Buttons/BtnLogin";
 import Validation from "./LoginValidation";
 
 
@@ -55,27 +55,49 @@ function Login(){
  * axios를 통한 통신 ( 차후 수정 )
  */
   return(
-    <Container className="my-5 py-5" style={{maxWidth : "600px"}}>
-      <Form className="d-flex-column" onSubmit={handleSubmit}>
-        <Form.Group className="mb-4" controlId="formEmail">
+    <S.FormContainer>
+
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="formEmail">
           <Form.Label>이메일 주소</Form.Label>
-          <BoxStyle>
-            <InputStyle type="email" placeholder="Enter your Email Address" name='email' onChange={handleInput} />
-          </BoxStyle>
+          <S.InputBox>
+            <S.Input 
+              type="email" 
+              placeholder="Enter your Email Address" 
+              name='email' 
+              onChange={handleInput}
+            />
+          </S.InputBox>
         </Form.Group>
 
-        <Form.Group className="mb-4" controlId="formPassword">
+        <Form.Group controlId="formPassword">
           <Form.Label>비밀번호</Form.Label>
-          <BoxStyle>
-            <InputStyle type="password" placeholder="Enter Your Password" name='password' onChange={handleInput}/>
-          </BoxStyle>
+          <S.InputBox>
+            <S.Input
+              type="password" 
+              placeholder="Enter Your Password" 
+              name='password' 
+              onChange={handleInput}
+            />
+            <i className="fa-solid fa-eye-slash"></i>
+          </S.InputBox>
         </Form.Group>
 
-        <BtnLogin type="submit" className="float-clear">
-          로그인
-        </BtnLogin>
+        <S.LoginHelper>
+          <Form.Check
+              // type=""
+              // id=""
+              label="계정 기억하기"
+          />
+          <a href="*">비밀번호를 잊으셨나요?</a>
+        </S.LoginHelper>
+
+        <S.BtnLogin type="submit">로그인</S.BtnLogin>
       </Form>
-    </Container>
+
+
+
+    </S.FormContainer>
   )
 };
 
