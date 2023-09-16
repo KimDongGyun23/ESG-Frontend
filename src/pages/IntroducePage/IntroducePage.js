@@ -22,6 +22,18 @@ function IntroducePage(){
   return(
     <>
       <Banner title="Our Team" subtitle="Home / Team"/>
+
+      <S.TitleBox>
+        <div>
+          <S.Title>What We Do</S.Title>
+          <S.Description>우리 서비스는 어려운 ESG개념을 보편화하기위하여 출발하였습니다. ESG가 어렵기보다는 이제 친숙한 ESG의 사회적 보편화를 위하여 노력합니다.</S.Description>
+        </div>
+        <div>
+          <S.Title>The ultimate goal</S.Title>
+          <S.Description>소비자가 기업의 ESG 경향을 파악, 분석하고 맞춤 소비를 할 수 있게 돕습니다. 습득·학습·공유의 3단계로 가치를 창출하려 합니다.</S.Description>
+        </div>
+      </S.TitleBox>
+
       <S.Profile>
         {
           teamId.map((i, j)=>{
