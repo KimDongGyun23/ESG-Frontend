@@ -91,5 +91,6 @@
 
 - ErrorPage의 grid 디자인 수정
 - IntroducePage grid 디자인 수정
+- IntroducePage 상단 텍스트 추가
 - 화면 크기가 줄어들었을 때 사진 비율이 깨지는 현상 수정
 - 한 줄에 나타나는 사진의 개수를 줄어들도록 수정 
