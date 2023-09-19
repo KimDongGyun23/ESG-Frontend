@@ -9,6 +9,8 @@ import { Route, Routes } from 'react-router-dom';
 import Concept from './pages/LearningPage/Concept';
 import Importance from './pages/LearningPage/Importance';
 import Quiz from './pages/LearningPage/Quiz';
+import ForumPage from './pages/ForumPage/ForumPage';
+import Questions from './pages/ForumPage/Questions';
 
 // 부트스트랩, 스타일 컴포넌트, 리액트 라우터 돔 설치
 function App() {
@@ -19,12 +21,22 @@ function App() {
         <Route path='/' element = { <MainPage /> } />
         <Route path='/introduce' element = { <IntroducePage /> } />
         <Route path='/login' element = { <LoginPage /> } />
+        
         <Route path='/learning' element = { <LearningPage /> }>
-          <Route path='/learning' element = { <Concept /> } />
+          <Route index element = { <Concept /> } />
           <Route path='/learning/concept' element = { <Concept /> } />
           <Route path='/learning/importance' element = { <Importance /> } />
           <Route path='/learning/quiz' element = { <Quiz /> } />
         </Route>
+        
+        <Route path='/forum' element = { <ForumPage /> }>
+          <Route path='/forum/questions' element = { <Questions /> } />
+          <Route path='/forum/environment' element = { <Concept /> } />
+          <Route path='/forum/social' element = { <Importance /> } />
+          <Route path='/forum/governance' element = { <Quiz /> } />
+          <Route path='/forum/tags' element = { <Quiz /> } />
+        </Route>
+        
         <Route path="*" element={ <ErrorPage /> } />
       </Routes>
       <Footer />
