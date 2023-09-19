@@ -6,10 +6,6 @@ export const Title = styled.p`
   margin-bottom : 1.5rem;
 `;
 
-export const Blue = styled.span`
-  color : #006FC0;
-`;
-
 export const CardBox = styled.div`
   margin: 3rem 0;
   text-align : left;
@@ -51,4 +47,8 @@ export const CardList = styled.ul`
 
 export const Br = styled.span`
   display : inline-block;
+`;
+
+export const Blue = styled.span`
+  color : #006FC0;
 `;
