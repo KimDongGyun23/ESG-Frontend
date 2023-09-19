@@ -100,4 +100,4 @@
 
 - LearningPage 수정
 - 개념, 중요성, 퀴즈 각각의 페이지를 Route와 Outlet을 통해 구현
-- 
+- 반응형에 맞게 Sidebar 위치 수정
