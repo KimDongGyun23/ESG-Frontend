@@ -23,8 +23,7 @@ function LearningPage(){
     <>
       <BannerImg/>
 
-      <div className='d-flex'>
-        
+      <div className='d-flex flex-column flex-lg-row'>
         <S.Sidebar>
           <S.Title>MENU</S.Title>
           {
@@ -47,7 +46,6 @@ function LearningPage(){
         <S.Main>
           <Outlet />
         </S.Main>
-        
       </div>
     </>
   )

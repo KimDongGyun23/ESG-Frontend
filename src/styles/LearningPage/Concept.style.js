@@ -15,13 +15,22 @@ export const CardBox = styled.div`
   text-align : left;
   display : flex;
   justify-content : space-evenly;
+
+  @media (max-width : 768px){
+    flex-direction : column;
+  }
 `;
 
 export const Card = styled.div`
-  width : 25%;
+  width : 30%;
   padding : 1.5rem;
   border : 0.5px solid #EAEAEA;
   border-radius : 1rem;
+
+  @media (max-width : 768px){
+    width : 100%;
+    margin-bottom : 1rem;
+  }
 `;
 
 export const CardHeader = styled.h4`
