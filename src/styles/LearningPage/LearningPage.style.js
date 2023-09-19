@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const Main = styled(Container)`
   width : 80%;
+  padding : 0 2rem;
   text-align : center;
   margin-bottom : 10rem;
 `;

@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Title = styled.p`
   font-size : 1.3rem;
-  line-height : 2.3rem;
+  line-height : 2rem;
+  margin-bottom : 1.5rem;
 `;
 
 export const Blue = styled.span`
@@ -37,4 +38,8 @@ export const CardList = styled.ul`
   & li+li{
     margin-top : 1rem;
   }
+`;
+
+export const Br = styled.span`
+  display : inline-block;
 `;

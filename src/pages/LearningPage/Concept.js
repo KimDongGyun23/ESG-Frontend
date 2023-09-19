@@ -36,9 +36,9 @@ function Concept(){
 
 
 
-      <S.Title>1987년 UNEP와 WCED에서 <S.Blue>지속가능한 발전</S.Blue>을 최초 언급해 ESG 개념이 시작됩니다.</S.Title>
-      <S.Title>미래세대에 필요한 자원과 잠재력을 훼손하지 않으면서 지속적인 발전을 의미합니다.</S.Title>
-      <S.Title>2006년 UN PRI를 통해 구체화가 되고, 2019년 BRT선언과 2020년 세계경제포럼에서 강조되어,</S.Title>
+      <S.Title><S.Br>1987년 UNEP와 WCED에서 <S.Blue>지속가능한 발전</S.Blue>을 최초 언급해 </S.Br><S.Br>ESG 개념이 시작됩니다.</S.Br></S.Title>
+      <S.Title>미래세대에 필요한 자원과 잠재력을 훼손하지 않으면서 <S.Br>지속적인 발전을 의미합니다.</S.Br></S.Title>
+      <S.Title><S.Br>2006년 UN PRI를 통해 구체화가 되고, </S.Br><S.Br>2019년 BRT선언과 2020년 세계경제포럼에서 강조되어,</S.Br></S.Title>
       <S.Title>ESG는 <S.Blue>기업 경영의 새로운 패러다임</S.Blue>으로 자리잡게 되었습니다.</S.Title>
     </>
   )
