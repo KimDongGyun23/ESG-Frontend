@@ -20,6 +20,7 @@ function App() {
         <Route path='/introduce' element = { <IntroducePage /> } />
         <Route path='/login' element = { <LoginPage /> } />
         <Route path='/learning' element = { <LearningPage /> }>
+          <Route path='/learning' element = { <Concept /> } />
           <Route path='/learning/concept' element = { <Concept /> } />
           <Route path='/learning/importance' element = { <Importance /> } />
           <Route path='/learning/quiz' element = { <Quiz /> } />
