@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function ForumPage(){
 
+  // 사이드바 클릭 이벤트 처리 변수
   const [currentTab, setCurrentTab] = useState(0);
 
   const subnav = [
@@ -16,8 +17,7 @@ function ForumPage(){
     { name: 'Tags', url: '/forum/tags' },
   ];
 
-  const indexHandler = index => setCurrentTab(index);
-
+  // 클릭한 요소에 focused 클래스를 부여하여 이벤츠 처리
   return(
     <>
       <BannerImg />
@@ -30,7 +30,7 @@ function ForumPage(){
             >
               <Link 
                 to = {element.url} 
-                onClick = { () => indexHandler(index) }
+                onClick = { () => setCurrentTab(index) }
               >
                 <i className="fa-solid fa-tag" /> {element.name}
               </Link>
@@ -38,7 +38,6 @@ function ForumPage(){
           ))
         }
       </SideMain>
-
     </>
   )
 };

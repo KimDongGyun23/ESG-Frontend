@@ -5,9 +5,9 @@ export const List = styled.div`
   padding : 1.3rem 0 1.3rem 1rem;
 
   @media (max-width : 992px){
+    margin : 0;
     width : 33%;
     text-align : center;
-    margin : 0 0 5rem 0;
     display : inline-block;
   }
 `;

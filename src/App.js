@@ -30,11 +30,12 @@ function App() {
         </Route>
         
         <Route path='/forum' element = { <ForumPage /> }>
+        <Route index element = { <Questions /> } />
           <Route path='/forum/questions' element = { <Questions /> } />
-          <Route path='/forum/environment' element = { <Concept /> } />
-          <Route path='/forum/social' element = { <Importance /> } />
-          <Route path='/forum/governance' element = { <Quiz /> } />
-          <Route path='/forum/tags' element = { <Quiz /> } />
+          <Route path='/forum/environment' element = { "environment" } />
+          <Route path='/forum/social' element = { "social" } />
+          <Route path='/forum/governance' element = { "governance" } />
+          <Route path='/forum/tags' element = { "tags" } />
         </Route>
         
         <Route path="*" element={ <ErrorPage /> } />
