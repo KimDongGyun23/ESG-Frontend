@@ -1,11 +1,8 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { BannerImg } from '../../styles/Layouts/Banner.style';
 import * as S from '../../styles/LearningPage/LearningPage.style'
 import { useState } from 'react';
-
-
-//Outlet 사용
-
+import SideMain from '../../components/Layouts/SideMain';
 
 function LearningPage(){
 
@@ -22,31 +19,23 @@ function LearningPage(){
   return(
     <>
       <BannerImg/>
-
-      <div className='d-flex flex-column flex-lg-row'>
-        <S.Sidebar>
-          <S.Title>MENU</S.Title>
-          {
-            subnav.map( (element, index) => (
-              <S.List 
-                key = {index}
-                className = {index === currentTab ? "focused" : "" }
+      <SideMain>
+        {
+          subnav.map( (element, index) => (
+            <S.List 
+              key = {index}
+              className = {index === currentTab ? "focused" : "" }
+            >
+              <Link 
+                to = {element.url} 
+                onClick = { () => indexHandler(index) }
               >
-                <Link 
-                  to = {element.url} 
-                  onClick = { () => indexHandler(index) }
-                >
-                  <i className="fa-solid fa-list-ul" /> {element.name}
-                </Link>
-              </S.List>
-            ))
-          }
-        </S.Sidebar>
-        
-        <S.Main>
-          <Outlet />
-        </S.Main>
-      </div>
+                <i className="fa-solid fa-list-ul" /> {element.name}
+              </Link>
+            </S.List>
+          ))
+        }
+      </SideMain>
     </>
   )
 }
