@@ -30,7 +30,7 @@ export const Sidebar = styled.div`
 
   @media (max-width : 992px){
     width : 80%;
-    margin : 0 auto;
+    margin : 0 auto 5rem;
   }
 `;
 

@@ -33,7 +33,7 @@ function Header(){
               <S.NavLink href="/">HOME</S.NavLink>
               <S.NavLink href="/esg">나의ESG</S.NavLink>
               <S.NavLink href="/learning">ESG학습</S.NavLink>
-              <S.NavLink href="/community">포럼</S.NavLink>
+              <S.NavLink href="/forum">포럼</S.NavLink>
               <S.NavLink href="/introduce">LOVESG소개</S.NavLink>
             </Nav>
 
