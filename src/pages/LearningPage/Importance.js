@@ -1,6 +1,6 @@
 import * as S from "../../styles/LearningPage/Importance.style"
 
-
+// 줄바뀜 시 가독성을 위해 <S.Br>을 추가함
 function Importance(){
   return(
     <>

@@ -1,6 +1,6 @@
 
 
-
+// 퀴즈 내용
 function Quiz(){
   return(
     <>

@@ -25,7 +25,6 @@ function Concept(){
         </S.Card>
 
         <S.Card>
-          
           <S.CardHeader><i className="fa-regular fa-star"></i> 지배구조 (Governance)</S.CardHeader>
           <S.CardList>
             <li>환경과 사회 가치를 기업이 실현하도록 뒷받침하는 투명한 이사회 구성과 감시위원회 구축해야 합니다.</li>
