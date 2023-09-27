@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function BtnMove(props){
   return(
     <Link to={props.to}>
-      <Button variant="dark" className="d-inline-flex flex-row align-items-center">
+      <Button variant="dark" className="d-inline-flex align-items-baseline">
         <p>{props.str}</p>
         <i className="fa-solid fa-arrow-right ms-2" style={{color: "#c17c06"}}></i>
       </Button>
