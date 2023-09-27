@@ -101,3 +101,11 @@
 - LearningPage 수정
 - 개념, 중요성, 퀴즈 각각의 페이지를 Route와 Outlet을 통해 구현
 - 반응형에 맞게 Sidebar 위치 수정
+### 9/19
+
+#### 수정 사항
+
+- SideMain.js 레이아웃 생성
+- 기존의 LearningPage의 레이아웃을 포럼에도 사용하기 위해 별도로 레이아웃 파일 생성
+- props.children을 사용하여 Sidebar 구현
+- Outlet을 사용하여 Main 구현
