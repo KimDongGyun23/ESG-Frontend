@@ -32,5 +32,10 @@
 * JavaScript
 * React
 
+### Getting started
+- Recommended `node js 18.x` and `npm 9+`. (suggestion v18.17.1 / v9.6.7)
+- Install dependencies: `npm install --force` / `yarn install`
+- Start the project: `npm run start` / `yarn start`
+
 ## ⚙️ 시스템 아키텍처
 
