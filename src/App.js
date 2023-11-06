@@ -1,5 +1,6 @@
 import Header from "./components/Layouts/Header";
 import Footer from "./components/Layouts/Footer";
+import FooterWhite from "./components/Layouts/FooterWhite";
 import MainPage from "./pages/MainPage/MainPage";
 import LoginPage from "./pages/UserPage/LoginPage";
 import SignUpPage from "./pages/UserPage/SignUpPage";
@@ -42,7 +43,8 @@ function App() {
 
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <Footer />
+      {window.location.pathname === "/introduce" ? <FooterWhite /> : <Footer />}
+      {/* 조건부 렌더링을 사용하여 경로가 "introduce"일 때만 FooterWhite를 렌더링하고 그 외의 경우에는 기본 Footer를 렌더링함 */}
     </div>
   );
 }
