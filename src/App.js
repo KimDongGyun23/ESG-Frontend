@@ -13,6 +13,8 @@ import Importance from "./pages/LearningPage/Importance";
 import Quiz from "./pages/LearningPage/Quiz";
 import ForumPage from "./pages/ForumPage/ForumPage";
 import Questions from "./pages/ForumPage/Questions";
+import ForumRegister from "./pages/ForumPage/ForumRegister";
+import NewsPage from "./pages/NewsPage/News";
 
 // 부트스트랩, 스타일 컴포넌트, 리액트 라우터 돔 설치
 function App() {
@@ -24,7 +26,7 @@ function App() {
         <Route path="/introduce" element={<IntroducePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-
+        <Route path="/esg" element={<NewsPage />} />
         <Route path="/learning" element={<LearningPage />}>
           <Route index element={<Concept />} />
           <Route path="/learning/concept" element={<Concept />} />
@@ -39,6 +41,7 @@ function App() {
           <Route path="/forum/social" element={"social"} />
           <Route path="/forum/governance" element={"governance"} />
           <Route path="/forum/tags" element={"tags"} />
+          <Route path="/forum/ForumRegister" element={<ForumRegister />} />
         </Route>
 
         <Route path="*" element={<ErrorPage />} />
