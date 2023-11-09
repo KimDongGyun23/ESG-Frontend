@@ -15,11 +15,20 @@ import ForumPage from "./pages/ForumPage/ForumPage";
 import Questions from "./pages/ForumPage/Questions";
 import ForumRegister from "./pages/ForumPage/ForumRegister";
 import NewsPage from "./pages/NewsPage/News";
+import { createGlobalStyle } from "styled-components";
+import "./App.css";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'GowunBatang Bold';
+  }
+`;
 
 // 부트스트랩, 스타일 컴포넌트, 리액트 라우터 돔 설치
 function App() {
   return (
     <div className="App">
+      <GlobalStyle />
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />

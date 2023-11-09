@@ -5,6 +5,7 @@ import MainTitle from "./MainTitle";
 import card1 from "../../assets/card1.png";
 import card2 from "../../assets/card2.png";
 import card3 from "../../assets/card3.png";
+import MainYoutube from "./MainYoutube";
 
 /**
  * < 메인 페이지 >
@@ -20,6 +21,7 @@ function MainPage(props) {
     <>
       <Banner title="About ESG" subtitle="Home / About ESG" />
       {/* <MainTitle /> */}
+      <MainYoutube />
       <MainCard position="left" img={card1}>
         <S.HeaderText>E (Environment)</S.HeaderText>
         <S.Text>
