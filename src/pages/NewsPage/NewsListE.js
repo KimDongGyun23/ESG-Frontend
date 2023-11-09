@@ -8,8 +8,6 @@ const NewsListBlock = styled.div`
   box-sizing: border-box;
   padding-bottom: 3rem;
   width: 768px;
-  margin: 0 auto;
-  margin-top: 2rem;
   @media screen and (max-width: 768px) {
     width: 100%;
     padding-left: 1rem;
@@ -19,7 +17,6 @@ const NewsListBlock = styled.div`
 
 const Pagination = styled.div`
   display: flex;
-  justify-content: center;
   margin-top: 2rem;
   color: #0291db;
   .page-btn {
@@ -32,7 +29,7 @@ const Pagination = styled.div`
   }
 `;
 
-const NewsList = () => {
+const NewsListE = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -99,4 +96,4 @@ const NewsList = () => {
   );
 };
 
-export default NewsList;
+export default NewsListE;

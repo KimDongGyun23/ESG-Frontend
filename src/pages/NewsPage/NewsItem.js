@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const NewsItemBlock = styled.div`
   display: flex;
+  justify-content: center;
   border: 1px solid lightgray;
   border-radius: 1rem 1rem;
   padding: 1rem 1rem;
@@ -9,7 +10,6 @@ const NewsItemBlock = styled.div`
 
   .thumbnail {
     padding: 1rem 1rem;
-    margin-right: 1rem;
     img {
       display: block;
       width: 15rem;
