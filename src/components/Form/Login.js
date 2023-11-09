@@ -43,12 +43,16 @@ function Login() {
       axios
         .post("/login", dataToSend)
         .then((res) => {
-          console.log("로그인 성공 및 로그인 정보:", res.data);
+          console.log("로그인 성공 및 로그인 정보:", res);
           setIsLogin(true); // 로그인 성공 시 isLogin을 true로 설정
           navigate("/"); // 성공 시 새로고침
         })
         .catch((err) => {
-          console.log("로그인 실패 에러: ", err);
+          if (err.response && err.response.status === 401) {
+            console.log("비밀번호가 틀렸습니다.");
+          } else {
+            console.log("로그인 실패 에러: ", err);
+          }
         });
     }
   };

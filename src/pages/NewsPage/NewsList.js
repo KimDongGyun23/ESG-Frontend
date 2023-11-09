@@ -17,9 +17,26 @@ const NewsListBlock = styled.div`
   }
 `;
 
+const Pagination = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  color: #0291db;
+  .page-btn {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
 const NewsList = () => {
-  const [articles, setArticles] = useState(null);
+  const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 4;
 
   useEffect(() => {
     // async를 사용하는 함수 따로 선언
@@ -38,22 +55,46 @@ const NewsList = () => {
     fetchData();
   }, []);
 
+  // page 나누기
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+  const currentArticles = articles.slice(
+    indexOfFirstArticle,
+    indexOfLastArticle
+  );
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(articles.length / articlesPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
   // 대기 중일 때
   if (loading) {
     return <Loading />;
   }
 
   // 아직 articles 값이 설정되지 않았을 때
-  if (!articles) {
-    return null;
+  if (!articles || articles.length === 0) {
+    return <div> 내용을 조금만 기다려주세요!</div>;
   }
 
   // articles 값이 유효할 때
   return (
     <NewsListBlock>
-      {articles.map((article) => (
+      {currentArticles.map((article) => (
         <NewsItem key={article.url} article={article} />
       ))}
+      <Pagination>
+        {pageNumbers.map((number) => (
+          <div
+            key={number}
+            className="page-btn"
+            onClick={() => setCurrentPage(number)}
+          >
+            {number}
+          </div>
+        ))}
+      </Pagination>
     </NewsListBlock>
   );
 };

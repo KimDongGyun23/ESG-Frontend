@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "GowunBatangRegular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/Fonts/GowunBatang-Bold.woff") format("woff2"),
+    url("./assets/Fonts/GowunBatang-Bold.woff") format("woff"),
+    url("./assets/Fonts/GowunBatang-Bold.woff") format("opentype");
+}
