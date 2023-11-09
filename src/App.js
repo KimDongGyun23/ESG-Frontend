@@ -20,7 +20,7 @@ import "./App.css";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'GowunBatangRegular';
+    font-family: 'GowunBatang Bold';
   }
 `;
 
