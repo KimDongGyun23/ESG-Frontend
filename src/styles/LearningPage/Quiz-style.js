@@ -292,7 +292,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const ResultContainer = styled.div`
-  margin-right:100px;
+  margin-right:150px;
   display: flex;
   justify-content: center;
   align-items: center;
