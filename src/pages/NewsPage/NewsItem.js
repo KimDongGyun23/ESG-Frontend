@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const NewsItemBlock = styled.div`
   display: flex;
+  justify-content: center;
   border: 1px solid lightgray;
   border-radius: 1rem 1rem;
   padding: 1rem 1rem;
@@ -9,7 +10,6 @@ const NewsItemBlock = styled.div`
 
   .thumbnail {
     padding: 1rem 1rem;
-    margin-right: 1rem;
     img {
       display: block;
       width: 15rem;
@@ -42,27 +42,25 @@ const NewsItemBlock = styled.div`
 `;
 
 const NewsItem = ({ article }) => {
-  const { title, description, url, urlToImage, author, publishedAt } = article;
-  const date = publishedAt.split("T")[0];
+  const { title, description, link, urlToImage, pDate } = article;
+  const date = pDate;
   return (
     <NewsItemBlock>
       {urlToImage && (
         <div className="thumbnail">
-          <a href={url} target="_blank" rel="noopener noreferrer">
+          <a href={link} target="_blank" rel="noopener noreferrer">
             <img src={urlToImage} alt="thumbnail" />
           </a>
         </div>
       )}
       <div className="contents">
         <h2>
-          <a href={url} target="_blank" rel="noopener noreferrer">
+          <a href={link} target="_blank" rel="noopener noreferrer">
             {title}
           </a>
         </h2>
         <p>{description}</p>
-        <p>
-          {author} / {date}
-        </p>
+        <p>{date}</p>
       </div>
     </NewsItemBlock>
   );

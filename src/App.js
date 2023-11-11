@@ -15,6 +15,9 @@ import ForumPage from "./pages/ForumPage/ForumPage";
 import Questions from "./pages/ForumPage/Questions";
 import ForumRegister from "./pages/ForumPage/ForumRegister";
 import NewsPage from "./pages/NewsPage/News";
+import EnvironmentNews from "./pages/NewsPage/EnvironmentNews";
+import SocialNews from "./pages/NewsPage/SocialNews";
+import GovernanceNews from "./pages/NewsPage/GovernanceNews";
 import { createGlobalStyle } from "styled-components";
 import "./App.css";
 
@@ -35,12 +38,20 @@ function App() {
         <Route path="/introduce" element={<IntroducePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/esg" element={<NewsPage />} />
+
         <Route path="/learning" element={<LearningPage />}>
           <Route index element={<Concept />} />
           <Route path="/learning/concept" element={<Concept />} />
           <Route path="/learning/importance" element={<Importance />} />
           <Route path="/learning/quiz" element={<Quiz />} />
+        </Route>
+
+        <Route path="/esg" element={<NewsPage />}>
+          <Route index element={<EnvironmentNews />} />
+          <Route path="/esg/e" element={<EnvironmentNews />} />
+          <Route path="/esg/s" element={<SocialNews />} />
+          <Route path="/esg/g" element={<GovernanceNews />} />
+          {/* element에 component 넣을 예정 */}
         </Route>
 
         <Route path="/forum" element={<ForumPage />}>

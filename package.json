@@ -48,5 +48,5 @@
   "devDependencies": {
     "@jridgewell/sourcemap-codec": "^1.4.15"
   },
-  "proxy": "http://13.209.40.221:8080"
+  "proxy": "http://54.180.95.198:8080"
 }

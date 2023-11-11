@@ -1,5 +1,4 @@
 import NewsItem from "./NewsItem";
-import axios from "axios";
 import Loading from "../../components/Layouts/Loading";
 import { styled } from "styled-components";
 import React, { useEffect, useState } from "react";
@@ -8,8 +7,6 @@ const NewsListBlock = styled.div`
   box-sizing: border-box;
   padding-bottom: 3rem;
   width: 768px;
-  margin: 0 auto;
-  margin-top: 2rem;
   @media screen and (max-width: 768px) {
     width: 100%;
     padding-left: 1rem;
@@ -19,7 +16,6 @@ const NewsListBlock = styled.div`
 
 const Pagination = styled.div`
   display: flex;
-  justify-content: center;
   margin-top: 2rem;
   color: #0291db;
   .page-btn {
@@ -32,7 +28,7 @@ const Pagination = styled.div`
   }
 `;
 
-const NewsList = () => {
+const NewsListE = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -43,10 +39,8 @@ const NewsList = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(
-          "https://newsapi.org/v2/everything?q=%ED%99%98%EA%B2%BD&apiKey=2f6b5c1ecba342de88a969b280b7363c"
-        );
-        setArticles(response.data.articles);
+        const response = require("../../assets/ESG환경_naver_news.json");
+        setArticles(response);
       } catch (e) {
         console.log(e);
       }
@@ -82,7 +76,7 @@ const NewsList = () => {
   return (
     <NewsListBlock>
       {currentArticles.map((article) => (
-        <NewsItem key={article.url} article={article} />
+        <NewsItem key={article.link} article={article} />
       ))}
       <Pagination>
         {pageNumbers.map((number) => (
@@ -99,4 +93,4 @@ const NewsList = () => {
   );
 };
 
-export default NewsList;
+export default NewsListE;
