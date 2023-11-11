@@ -1,5 +1,4 @@
 import NewsItem from "./NewsItem";
-import axios from "axios";
 import Loading from "../../components/Layouts/Loading";
 import { styled } from "styled-components";
 import React, { useEffect, useState } from "react";
@@ -40,10 +39,8 @@ const NewsListE = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(
-          "https://newsapi.org/v2/everything?q=%ED%99%98%EA%B2%BD&apiKey=2f6b5c1ecba342de88a969b280b7363c"
-        );
-        setArticles(response.data.articles);
+        const response = require("../../assets/ESG환경_naver_news.json");
+        setArticles(response);
       } catch (e) {
         console.log(e);
       }
@@ -79,7 +76,7 @@ const NewsListE = () => {
   return (
     <NewsListBlock>
       {currentArticles.map((article) => (
-        <NewsItem key={article.url} article={article} />
+        <NewsItem key={article.link} article={article} />
       ))}
       <Pagination>
         {pageNumbers.map((number) => (
