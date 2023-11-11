@@ -4,6 +4,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  column-gap: 30px;
+  margin-right: 10%;
 `;
 
 export const QuizWrapper = styled.div`
@@ -12,6 +14,10 @@ export const QuizWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-weight: bolder;
+  font-size: 25px;
+  color: #6066D0;
+  margin-right: 2%
 `;
 export const SubmitButton = styled.button`
   width: 179px;
@@ -35,8 +41,8 @@ export const CustomNextButton = styled(SubmitButton)`
     letter-spacing: 0.02em;
     font-size: 19px;
     font-weight: 900;
-    
-    margin-right: 12px;
+    margin: 0 auto;
+    margin-top: 15%;
     color: #fff;
     border-radius: 15px;
     margin-left: 0px;
@@ -68,9 +74,10 @@ export const Title = styled.div`
 `;
 
 export const Label = styled.div`
-  margin-bottom: 40px;
+  font-weight: bolder;
   font-size: 25px;
-  font-weight: 610;
+  color: #6066D0;
+  margin-bottom: 40px;
   color: rgba(96, 102, 208, 1);
   text-shadow: -2px -1px 5px rgba(108, 99, 255, 0.47);
   display: flex;
@@ -80,8 +87,24 @@ export const Label = styled.div`
   align-items: center;
 `;
 
+export const LabelScore = styled.div`
+  font-weight: bolder;
+  font-size: 25px;
+  color: #6066D0;
+  margin-bottom: 40px;
+  color: rgba(96, 102, 208, 1);
+  
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+`;
+
 export const Quiz = styled.div`
-  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 17px;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -113,7 +136,6 @@ export const StyledLabel = styled.label`
   width: 240px;
   border-radius: 30px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.23);
-
   flex-direction: column;
   align-content: center;
   align-items: center;
@@ -181,7 +203,10 @@ export const TimerArea = styled.div`
 `;
 
 export const SolvedContainer = styled.div`
-  margin-right: "20px";
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width:20%;
 `;
 
 export const Barbox = styled.div`
@@ -199,10 +224,11 @@ export const TimerCircle = styled.div`
   height: 100%;
   background-color: rgba(252, 168, 47, 1);
   border-radius: 5px;
+  margin-bottom: 10px;
 `;
 
 export const TimerWrapper = styled.div`
-  margin-left: 30px;
+  
 `;
 
 export const CardBox = styled.div`
@@ -263,4 +289,12 @@ export const ButtonWrapper = styled.div`
 
 export const InputWrapper = styled.div`
   padding-top: 10px;
+`;
+
+export const ResultContainer = styled.div`
+  margin-right:100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;

@@ -111,7 +111,7 @@ function Quiz() {
           {num <= quiz.list.length - 1 ? (
             <>
               <S.Label>
-                문제{num + 1}.<S.Quiz> {quiz.list[num].question}</S.Quiz>
+                문제{num + 1} <S.Quiz> {quiz.list[num].question}</S.Quiz>
               </S.Label>
               <S.Option>
                 {quiz.list[num].options.map((option, index) => (
@@ -136,7 +136,11 @@ function Quiz() {
               </S.ButtonWrapper>
             </>
           ) : (
-            <div>최종 점수는 {score}점입니다!</div>
+            // 이 부분 수정 필요 
+            <S.ResultContainer>
+              <S.Label>ESG QUIZ</S.Label>
+              <S.LabelScore>최종 점수는 {score}점입니다!</S.LabelScore>
+            </S.ResultContainer>
           )}
         </S.QuizWrapper>
         <S.TimerWrapper>
