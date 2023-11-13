@@ -1,5 +1,6 @@
 import * as S from "../../styles/LearningPage/Quiz-style";
 import { useEffect, useState } from "react";
+import confetti from 'canvas-confetti';
 
 function Quiz() {
   const [num, setNum] = useState(0);
@@ -95,6 +96,40 @@ function Quiz() {
     return () => clearInterval(timerInterval);
   }, [time]); // time 값이 변경될 때마다 실행
 
+  // 폭죽 효과 함수 정의 
+  function firework() {
+    var duration = 15 * 100;
+    var animationEnd = Date.now() + duration;
+    var defaults = { startVelocity: 25, spread: 360, ticks: 50, zIndex: 0 };
+    //  startVelocity: 범위, spread: 방향, ticks: 갯수
+  
+    function randomInRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+  
+    var interval = setInterval(function () {
+      var timeLeft = animationEnd - Date.now();
+  
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+  
+      var particleCount = 50 * (timeLeft / duration);
+      confetti(
+        Object.assign({}, defaults, {
+          particleCount,
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+        })
+      );
+      confetti(
+        Object.assign({}, defaults, {
+          particleCount,
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+        })
+      );
+    }, 250);
+  }
+
   return (
     <>
       <S.Container>
@@ -138,8 +173,10 @@ function Quiz() {
           ) : (
             // 이 부분 수정 필요 
             <S.ResultContainer>
+              
               <S.Label>ESG QUIZ</S.Label>
               <S.LabelScore>최종 점수는 {score}점입니다!</S.LabelScore>
+              {firework()}
             </S.ResultContainer>
           )}
         </S.QuizWrapper>
