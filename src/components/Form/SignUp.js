@@ -60,7 +60,7 @@ function SignUp(props) {
     console.log("입력값 출력", dataToSend);
 
     axios
-      .post(`${PROXY}/join/user`, dataToSend)
+      .post(`/join/user`, dataToSend)
       .then((res) => {
         console.log("데이터 서버 전송 성공", res.data);
         navigate("/");
