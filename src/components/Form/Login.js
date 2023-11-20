@@ -1,14 +1,15 @@
 import { Form } from "react-bootstrap";
 import * as S from "../../styles/Form/Form.style";
-
+import { setCookie } from "../../utils/cookie";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Validation from "./LoginValidation";
+import { useAuth } from "../../utils/AuthContext";
 
 // 로그인 버튼 선택 시
-function Login() {
-  const [isLogin, setIsLogin] = useState(false);
+function Login(props) {
+  const { login } = useAuth();
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -28,8 +29,6 @@ function Login() {
     const validationErrors = Validation(values);
     setErrors(validationErrors);
 
-    console.log("입력 값:", values);
-
     // 서버로 데이터 전송
     const dataToSend = {
       email: values.email,
@@ -43,9 +42,18 @@ function Login() {
       axios
         .post("/login", dataToSend)
         .then((res) => {
-          console.log("로그인 성공 및 로그인 정보:", res);
-          setIsLogin(true); // 로그인 성공 시 isLogin을 true로 설정
-          navigate("/"); // 성공 시 새로고침
+          console.log(res.data.message); // 백엔드에서 보내는 로그인 성공
+          console.log("백엔드에서 보낸 access token: " + res.data.access_token);
+
+          const accessToken = res.data.access_token;
+          setCookie("access-token", `${accessToken}`, {
+            path: "/",
+            sameSite: "strict",
+          });
+
+          login();
+          navigate("/");
+          alert("로그인 되었습니다!");
         })
         .catch((err) => {
           if (err.response && err.response.status === 401) {
