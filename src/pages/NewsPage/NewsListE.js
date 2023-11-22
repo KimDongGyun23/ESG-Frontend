@@ -2,6 +2,7 @@ import NewsItem from "./NewsItem";
 import Loading from "../../components/Layouts/Loading";
 import { styled } from "styled-components";
 import React, { useEffect, useState } from "react";
+import Pagination from "../../components/Layouts/Pagination";
 
 const NewsListBlock = styled.div`
   box-sizing: border-box;
@@ -11,20 +12,6 @@ const NewsListBlock = styled.div`
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-`;
-
-const Pagination = styled.div`
-  display: flex;
-  margin-top: 2rem;
-  color: #0291db;
-  .page-btn {
-    font-size: 1.2rem;
-    margin: 0 0.5rem;
-    cursor: pointer;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 `;
 
@@ -49,7 +36,7 @@ const NewsListE = () => {
     fetchData();
   }, []);
 
-  // page 나누기
+  // 페이지 이동 함수
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
   const currentArticles = articles.slice(
@@ -57,10 +44,9 @@ const NewsListE = () => {
     indexOfLastArticle
   );
 
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(articles.length / articlesPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   // 대기 중일 때
   if (loading) {
@@ -78,17 +64,11 @@ const NewsListE = () => {
       {currentArticles.map((article) => (
         <NewsItem key={article.link} article={article} />
       ))}
-      <Pagination>
-        {pageNumbers.map((number) => (
-          <div
-            key={number}
-            className="page-btn"
-            onClick={() => setCurrentPage(number)}
-          >
-            {number}
-          </div>
-        ))}
-      </Pagination>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={Math.ceil(articles.length / articlesPerPage)}
+        onPageChange={handlePageChange}
+      />
     </NewsListBlock>
   );
 };
