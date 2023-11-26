@@ -21,8 +21,9 @@ function FooterWhite() {
           <p>Seoul, Republic of Korea</p>
         </div>
         <div>
+          <p>sonopj@gmail.com</p>
           <p>dasapcr@naver.com</p>
-          <p>(+82) 10-2572-2589</p>
+          <p>(+82) 10-5239-2198</p>
         </div>
       </S.TextBox>
       <S.CopyRight>&copy; 2023. LOVESG All rights reserved.</S.CopyRight>

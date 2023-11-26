@@ -17,21 +17,24 @@ function News() {
   let subnav = [];
   if (interest === "E") {
     subnav = [
-      { name: `${nickname}님을 위한 추천 뉴스`, url: "/esg/e" },
-      { name: "사회 뉴스", url: "/esg/s" },
-      { name: "지배구조 뉴스", url: "/esg/g" },
+      { name: `${nickname}님을 위한 뉴스`, url: "/esg/e" },
+      { name: `E 환경 뉴스`, url: "/esg/e" },
+      { name: "S 사회 뉴스", url: "/esg/s" },
+      { name: "G 지배구조 뉴스", url: "/esg/g" },
     ];
   } else if (interest === "S") {
     subnav = [
       { name: `${nickname}님을 위한 추천 뉴스`, url: "/esg/s" },
-      { name: "환경 뉴스", url: "/esg/e" },
-      { name: "지배구조 뉴스", url: "/esg/g" },
+      { name: "E 환경 뉴스", url: "/esg/e" },
+      { name: "S 사회 뉴스", url: "/esg/s" },
+      { name: "G 지배구조 뉴스", url: "/esg/g" },
     ];
   } else if (interest === "G") {
     subnav = [
       { name: `${nickname}님을 위한 추천 뉴스`, url: "/esg/g" },
-      { name: "환경 뉴스", url: "/esg/e" },
-      { name: "사회 뉴스", url: "/esg/s" },
+      { name: "E 환경 뉴스", url: "/esg/e" },
+      { name: "S 사회 뉴스", url: "/esg/s" },
+      { name: "G 지배구조 뉴스", url: "/esg/g" },
     ];
   }
 

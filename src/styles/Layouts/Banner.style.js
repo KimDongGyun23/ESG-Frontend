@@ -1,20 +1,20 @@
 import styled from "styled-components";
-import banner from "../../assets/banner.png";
+import banner from "../../assets/images/banner1.jpg";
 
 // 배너 이미지
 export const BannerImg = styled.div`
-  height: 22rem;
+  height: 35rem;
   background-image: url(${banner});
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 `;
 
 // 내부 Title
 export const BannerTitle = styled.div`
-  width: 40%;
+  width: 35%;
   border-radius: 20px 20px 0 0;
   background: white;
   position: absolute;

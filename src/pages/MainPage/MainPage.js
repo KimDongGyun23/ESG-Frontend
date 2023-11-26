@@ -2,9 +2,9 @@ import * as S from "../../styles/MainPage/MainPage.style";
 import Banner from "../../components/Layouts/Banner";
 import MainCard from "./MainCard";
 import MainTitle from "./MainTitle";
-import card1 from "../../assets/card1.png";
-import card2 from "../../assets/card2.png";
-import card3 from "../../assets/card3.png";
+import card1 from "../../assets/images/card1.png";
+import card2 from "../../assets/images/card2.png";
+import card3 from "../../assets/images/card3.png";
 import MainYoutube from "./MainYoutube";
 
 /**

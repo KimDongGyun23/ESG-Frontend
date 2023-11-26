@@ -8,7 +8,7 @@ const PaginationWrapper = styled.div`
   color: #0291db;
   .page-btn {
     font-size: 1.5rem;
-    margin: 1rem 1 rem 0 1rem;
+    margin: 2rem 0.5rem 0 0.5rem;
     cursor: pointer;
     padding: 0.5rem 0.7rem;
     border: 1px solid #0291db;
@@ -19,6 +19,11 @@ const PaginationWrapper = styled.div`
       background-color: #0291db;
       color: #fff;
     }
+  }
+
+  .active {
+    background-color: #0291db;
+    color: #fff;
   }
 `;
 
@@ -41,21 +46,26 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           className="page-btn"
           onClick={() => onPageChange(currentPage - 1)}
         >
-          이전
+          ◁
         </div>
       );
     }
 
-    // 현재 페이지 버튼
-    buttons.push(
-      <div
-        key={currentPage}
-        className={`page-btn active`}
-        onClick={() => onPageChange(currentPage)}
-      >
-        {currentPage}
-      </div>
-    );
+    for (
+      let i = Math.max(1, currentPage - 2);
+      i <= Math.min(totalPages, currentPage + 2);
+      i++
+    ) {
+      buttons.push(
+        <div
+          key={i}
+          className={`page-btn ${currentPage === i ? "active" : ""}`}
+          onClick={() => onPageChange(i)}
+        >
+          {i}
+        </div>
+      );
+    }
 
     // 다음 페이지 버튼
     if (currentPage < totalPages) {
@@ -65,7 +75,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           className="page-btn"
           onClick={() => onPageChange(currentPage + 1)}
         >
-          다음
+          ▷
         </div>
       );
     }
@@ -77,7 +87,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         className="page-btn"
         onClick={() => onPageChange(totalPages)}
       >
-        마지막
+        끝
       </div>
     );
 
