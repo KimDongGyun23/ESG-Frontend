@@ -1,14 +1,14 @@
 import { Form } from "react-bootstrap";
 import * as S from "../../styles/Form/Form.style";
-import { setCookie } from "../../utils/cookie";
+import { setCookie } from "../../context/cookie";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Validation from "./LoginValidation";
-import { useAuth } from "../../utils/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 // 로그인 버튼 선택 시
-function Login(props) {
+function Login() {
   const { login } = useAuth();
   const [values, setValues] = useState({
     email: "",
@@ -50,6 +50,11 @@ function Login(props) {
             path: "/",
             sameSite: "strict",
           });
+
+          localStorage.clear();
+          localStorage.setItem("nickname", res.data.nickname);
+          localStorage.setItem("access-token", res.data.access_token);
+          localStorage.setItem("interest", res.data.interest);
 
           login();
           navigate("/");

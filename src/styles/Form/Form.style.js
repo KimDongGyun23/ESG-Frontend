@@ -31,7 +31,7 @@ export const BtnLogin = styled.button`
   width: 50%;
   padding: 1rem;
   margin-left: 50%;
-
+  margin-top: 2rem;
   background-color: #73bcff;
   border: none;
   border-radius: 2rem;

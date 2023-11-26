@@ -2,7 +2,7 @@ import { Form } from "react-bootstrap";
 import * as S from "../../styles/Form/Form.style";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Validation from "./SignInValidation"; // input 검사 함수
+import Validation from "./SignInValidation";
 import axios from "axios";
 const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
 
@@ -152,6 +152,7 @@ function SignUp(props) {
         <Form.Group controlId="formLike">
           <Form.Label>관심사 </Form.Label>
           <Form.Control as="select" name="like" onChange={handleInput}>
+            <option value="">이곳을 눌러 관심사를 선택해주세요!</option>
             <option value="E">환경 (E)</option>
             <option value="S">사회 (S)</option>
             <option value="G">지배구조 (G)</option>

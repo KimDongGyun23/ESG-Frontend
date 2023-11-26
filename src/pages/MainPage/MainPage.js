@@ -19,8 +19,8 @@ function MainPage(props) {
   const isLogin = props.isLogin; // Login state 어떻게 반영할 것인지?
   return (
     <>
-      <Banner title="About ESG" subtitle="Home / About ESG" />
-      {/* <MainTitle /> */}
+      <Banner title="About ESG" subtitle="메인 페이지" />
+      <MainTitle />
       <MainYoutube />
       <MainCard position="left" img={card1}>
         <S.HeaderText>E (Environment)</S.HeaderText>

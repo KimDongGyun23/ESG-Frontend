@@ -1,6 +1,7 @@
 import { removeCookie, getCookie } from "./cookie";
 import React, { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -19,6 +20,7 @@ export const AuthProvider = ({ children }) => {
     // 로그아웃 로직 처리
     removeCookie("access-token");
     alert("로그아웃 되었습니다!");
+    localStorage.clear();
     navigate("/");
   };
 
