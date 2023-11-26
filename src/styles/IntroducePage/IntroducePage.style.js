@@ -2,10 +2,10 @@ import { styled } from "styled-components";
 import { Container } from "react-bootstrap";
 
 export const TitleBox = styled(Container)`
-  padding: 0 3rem;
+  padding: 3rem;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 7rem;
+  margin-bottom: 3rem;
 
   & > div {
     width: 40%;
@@ -71,13 +71,13 @@ export const ButtonContainer = styled.div`
 export const GitHubButton = styled.a`
   display: inline-block;
   padding: 2rem 2rem;
-  background-color: black;
-  border: none;
+  background-color: darkgray;
   border-radius: 2rem;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.5s;
+  box-shadow: 5px 5px 5px 0px rgb(0, 0, 0, 0.5);
   &:hover {
     background-color: #2e9afe;
   }

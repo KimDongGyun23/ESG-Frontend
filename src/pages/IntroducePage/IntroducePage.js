@@ -5,7 +5,7 @@ import Banner from "../../components/Layouts/Banner";
  * < TeamPage >
  */
 function IntroducePage() {
-  const GitHubLink = "https://github.com/KWU-ESG/esg-frontend-react";
+  const GitHubLink = "https://github.com/KWU-ESG/";
 
   return (
     <>
@@ -16,7 +16,7 @@ function IntroducePage() {
           <S.Title>What We Do</S.Title>
           <S.Description>
             우리 서비스는 어려운 ESG개념을 보편화하기위하여 출발하였습니다.
-            ESG가 어렵기보다는 이제 친숙한 ESG의 사회적 보편화를 위하여
+            ESG가 어렵기보다는 이제 친숙한 ESG의 사회적 보편화를 위해
             노력합니다.
           </S.Description>
         </div>

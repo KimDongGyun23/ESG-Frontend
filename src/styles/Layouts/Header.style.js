@@ -15,7 +15,7 @@ export const NavLink = styled(Nav.Link)`
 
   &:hover,
   &:focus {
-    color: #00bfff; /* 마우스 호버 또는 포커스 시 텍스트 색상 변경 */
+    color: #00bfff;
   }
 
   @media (max-width: 768px) {
@@ -33,7 +33,7 @@ export const NavbarBrand = styled(Navbar.Brand)`
 
   &:hover,
   &:focus {
-    color: gray; /* 마우스 호버 또는 포커스 시 텍스트 색상 변경 */
+    color: gray;
   }
 
   @media (max-width: 768px) {
@@ -46,7 +46,7 @@ export const NavbarBrand = styled(Navbar.Brand)`
 
 export const Image = styled.img`
   width: auto;
-  height: 3rem;
+  height: 4rem;
   max-height: 100%;
   margin-right: 0.5rem;
 `;
