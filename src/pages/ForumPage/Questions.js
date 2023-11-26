@@ -1,5 +1,5 @@
 import * as S from "../../styles/ForumPage/Questions.style";
-import profileImg from "../../assets/forum-profile.png";
+import profileImg from "../../assets/images/forum-profile.png";
 import Subnav from "./Subnav";
 import { Link } from "react-router-dom";
 

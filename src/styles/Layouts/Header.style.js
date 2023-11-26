@@ -1,27 +1,52 @@
 import { Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
 
-// 로그인 박스 스타일
-// export const Login = styled.div`
-//   display : flex;
-//   align-items : center;
-// `;
-
 export const Toggler = styled(Navbar.Toggle)`
-  border : none;
-
-  &:focus{
-    box-shadow : none;
+  border: none;
+  &:focus {
+    box-shadow: none;
   }
 `;
 
 export const NavLink = styled(Nav.Link)`
-  text-align : center;
-  margin-right : 2rem;
+  text-align: center;
+  margin-right: 2rem;
+  font-size: 1.4rem;
 
-  @media (max-width : 767px){
-    margin-right : 0;
-    line-height : 3rem;
-    border-bottom : 0.5px solid #d3d6cf;
+  &:hover,
+  &:focus {
+    color: #00bfff; /* 마우스 호버 또는 포커스 시 텍스트 색상 변경 */
   }
+
+  @media (max-width: 768px) {
+    line-height: 3rem;
+    font-size: 1rem;
+    border-bottom: 0.5px solid #d3d6cf;
+  }
+`;
+
+export const NavbarBrand = styled(Navbar.Brand)`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1389d0;
+  margin-bottom: 0.5rem;
+
+  &:hover,
+  &:focus {
+    color: gray; /* 마우스 호버 또는 포커스 시 텍스트 색상 변경 */
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    line-height: 3rem;
+    font-size: 1rem;
+    border-bottom: 0.5px solid #d3d6cf;
+  }
+`;
+
+export const Image = styled.img`
+  width: auto;
+  height: 3rem;
+  max-height: 100%;
+  margin-right: 0.5rem;
 `;
