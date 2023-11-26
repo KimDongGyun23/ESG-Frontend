@@ -1,5 +1,3 @@
-// Pagenation.js
-
 import React from "react";
 import { styled } from "styled-components";
 
@@ -9,10 +7,10 @@ const PaginationWrapper = styled.div`
   margin-top: 2rem;
   color: #0291db;
   .page-btn {
-    font-size: 1.2rem;
-    margin: 0 3rem 0 0;
+    font-size: 1.5rem;
+    margin: 1rem 1 rem 0 1rem;
     cursor: pointer;
-    padding: 0.3rem 0.5rem;
+    padding: 0.5rem 0.7rem;
     border: 1px solid #0291db;
     border-radius: 1rem;
     transition: background-color 0.3s, color 0.3s;

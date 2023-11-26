@@ -20,9 +20,7 @@ import SocialNews from "./pages/NewsPage/SocialNews";
 import GovernanceNews from "./pages/NewsPage/GovernanceNews";
 import { createGlobalStyle } from "styled-components";
 import "./App.css";
-import { useEffect, useState } from "react";
-import { getCookie } from "./utils/cookie";
-import { AuthProvider, useAuth } from "./utils/AuthContext";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 
 const GlobalStyle = createGlobalStyle`
   body {

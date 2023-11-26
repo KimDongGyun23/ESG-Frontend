@@ -1,25 +1,16 @@
 import NewsItem from "./NewsItem";
 import Loading from "../../components/Layouts/Loading";
-import { styled } from "styled-components";
+import * as S from "../../styles/News/NewsList-style";
 import React, { useEffect, useState } from "react";
-import Pagination from "../../components/Layouts/Pagination";
-
-const NewsListBlock = styled.div`
-  box-sizing: border-box;
-  padding-bottom: 3rem;
-  width: 768px;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-`;
+import Pagination from "../../components/Buttons/Pagination";
+import SearchBar from "../../components/Form/SearchBar";
 
 const NewsListE = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const articlesPerPage = 4;
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const articlesPerPage = 5;
 
   useEffect(() => {
     // async를 사용하는 함수 따로 선언
@@ -58,18 +49,40 @@ const NewsListE = () => {
     return <div> 내용을 조금만 기다려주세요!</div>;
   }
 
+  const filteredArticles = articles.filter((article) => {
+    const title = article.title ? article.title.toLowerCase() : "";
+    const content = article.content ? article.content.toLowerCase() : "";
+    const lowerCaseSearchKeyword = searchKeyword.toLowerCase();
+
+    return (
+      title.includes(lowerCaseSearchKeyword) ||
+      content.includes(lowerCaseSearchKeyword)
+    );
+  });
+
+  const filteredCurrentArticles = filteredArticles.slice(
+    indexOfFirstArticle,
+    indexOfLastArticle
+  );
+
   // articles 값이 유효할 때
   return (
-    <NewsListBlock>
-      {currentArticles.map((article) => (
-        <NewsItem key={article.link} article={article} />
-      ))}
-      <Pagination
-        currentPage={currentPage}
-        totalPages={Math.ceil(articles.length / articlesPerPage)}
-        onPageChange={handlePageChange}
-      />
-    </NewsListBlock>
+    <>
+      <S.NewsListBlock>
+        <SearchBar
+          value={searchKeyword}
+          onChange={(value) => setSearchKeyword(value)}
+        />
+        {filteredCurrentArticles.map((article) => (
+          <NewsItem key={article.link} article={article} />
+        ))}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={Math.ceil(filteredArticles.length / articlesPerPage)}
+          onPageChange={handlePageChange}
+        />
+      </S.NewsListBlock>
+    </>
   );
 };
 

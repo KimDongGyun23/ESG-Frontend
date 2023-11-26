@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import * as S from "../../styles/Layouts/Header.style";
-import { getCookie, removeCookie } from "../../utils/cookie";
-import { useAuth } from "../../utils/AuthContext";
+import { getCookie, removeCookie } from "../../context/cookie";
+import { useAuth } from "../../context/AuthContext";
 
 function Header() {
   const { login, logout } = useAuth();

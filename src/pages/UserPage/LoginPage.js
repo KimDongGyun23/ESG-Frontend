@@ -1,28 +1,17 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import Banner from "../../components/Layouts/Banner";
-import SignIn from "../../components/Form/SignUp";
 import Login from "../../components/Form/Login";
-import * as S from "../../styles/LoginPage/LoginPage.style";
 
 /**
  * < 로그인 페이지 >
  * 버튼 클릭 시, log의 상태를 통하여 보여지는 컴포넌트 변경
  */
 function LoginPage() {
-  const [log, setLog] = useState(false);
   return (
     <>
-      <Banner title="Sign up" subtitle="회원가입하기" />
+      <Banner title="Sign in" subtitle="로그인하기" />
       <Container>
-        <p className="text-center">Welcome to LOVESG..!</p>
-        <S.LoginBox>
-          <S.Btn $log={log} onClick={() => setLog(false)}>
-            로그인
-          </S.Btn>
-          <S.Btn>회원가입</S.Btn>
-        </S.LoginBox>
-
         <Login />
       </Container>
     </>
