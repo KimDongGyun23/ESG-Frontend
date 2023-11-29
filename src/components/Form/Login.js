@@ -44,7 +44,7 @@ function Login() {
         .then((res) => {
           console.log(res.data.message); // 백엔드에서 보내는 로그인 성공
           console.log("백엔드에서 보낸 access token: " + res.data.access_token);
-
+          console.log(res.data);
           const accessToken = res.data.access_token;
           setCookie("access-token", `${accessToken}`, {
             path: "/",
@@ -52,7 +52,7 @@ function Login() {
           });
 
           localStorage.clear();
-          localStorage.setItem("nickname", res.data.nickname);
+          localStorage.setItem("nickname", res.data.NickName);
           localStorage.setItem("access-token", res.data.access_token);
           localStorage.setItem("interest", res.data.interest);
 

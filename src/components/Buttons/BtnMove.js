@@ -9,6 +9,7 @@ function BtnMove(props) {
         variant="outline-info"
         size="lg"
         className="d-inline-flex align-items-baseline"
+        style={{ margin: "1rem" }}
       >
         <p style={{ fontSize: "2rem", margin: 0 }}>{props.str}</p>
         <i

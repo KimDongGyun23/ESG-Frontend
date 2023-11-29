@@ -20,6 +20,8 @@ function ErrorPage() {
           </p>
         </S.TextBox>
         <BtnMove str="Back To Home" to="/" />
+        <BtnMove str="회원가입 하러가기" to="/signup" />
+        <BtnMove str="로그인 하러가기" to="/login" />
       </div>
 
       <div>

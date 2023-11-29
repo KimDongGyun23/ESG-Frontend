@@ -7,7 +7,7 @@ import SignUpPage from "./pages/UserPage/SignUpPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import IntroducePage from "./pages/IntroducePage/IntroducePage";
 import LearningPage from "./pages/LearningPage/LearningPage";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Concept from "./pages/LearningPage/Concept";
 import Importance from "./pages/LearningPage/Importance";
 import Quiz from "./pages/LearningPage/Quiz";
@@ -18,6 +18,7 @@ import NewsPage from "./pages/NewsPage/News";
 import EnvironmentNews from "./pages/NewsPage/EnvironmentNews";
 import SocialNews from "./pages/NewsPage/SocialNews";
 import GovernanceNews from "./pages/NewsPage/GovernanceNews";
+import NotUser from "./pages/UserPage/NotUser";
 import Keyword from "./pages/NewsPage/Keyword";
 import { createGlobalStyle } from "styled-components";
 import "./App.css";
@@ -28,6 +29,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'GowunBatang Bold';
   }
 `;
+let defaultRoute;
+const interest = localStorage.getItem("interest");
+if (interest === null) {
+  defaultRoute = "/esg/notUser";
+} else {
+  defaultRoute = interest ? `/esg/${interest.toLowerCase()}` : "/esg";
+}
 
 // 부트스트랩, 스타일 컴포넌트, 리액트 라우터 돔 설치
 function App() {
@@ -50,11 +58,12 @@ function App() {
           </Route>
 
           <Route path="/esg" element={<NewsPage />}>
-            <Route index element={<EnvironmentNews />} />
+            <Route index element={<Navigate to={defaultRoute} />} />
             <Route path="/esg/e" element={<EnvironmentNews />} />
             <Route path="/esg/s" element={<SocialNews />} />
             <Route path="/esg/g" element={<GovernanceNews />} />
             <Route path="/esg/keyword" element={<Keyword />} />
+            <Route path="/esg/notUser" element={<NotUser />} />
             {/* element에 component 넣을 예정 */}
           </Route>
 

@@ -7,14 +7,15 @@ import SocialNews from "./SocialNews";
 import EnvironmentNews from "./EnvironmentNews";
 import GovernanceNews from "./GovernanceNews";
 import Keyword from "./Keyword";
+import { useAuth } from "../../context/AuthContext";
+import NotUser from "../UserPage/NotUser";
 
 function News() {
   // 사이드바 클릭 이벤트 처리 변수
   const [currentTab, setCurrentTab] = useState(0);
-  // const interest = localStorage.getItem("interest");
-  const interest = "E";
-  const nickname = "chae";
-  //const nickname = localStorage.getItem("nickname");
+  const interest = localStorage.getItem("interest");
+  const nickname = localStorage.getItem("nickname");
+
   let subnav = [];
   if (interest === "E") {
     subnav = [
@@ -35,6 +36,14 @@ function News() {
   } else if (interest === "G") {
     subnav = [
       { name: `${nickname}님을 위한 추천 뉴스`, url: "/esg/g" },
+      { name: "E 환경 뉴스", url: "/esg/e" },
+      { name: "S 사회 뉴스", url: "/esg/s" },
+      { name: "G 지배구조 뉴스", url: "/esg/g" },
+      { name: "핵심 키워드", url: "/esg/keyword" },
+    ];
+  } else if (subnav.length === 0) {
+    subnav = [
+      { name: "  님을 위한 추천 뉴스", url: "/esg/notUser" },
       { name: "E 환경 뉴스", url: "/esg/e" },
       { name: "S 사회 뉴스", url: "/esg/s" },
       { name: "G 지배구조 뉴스", url: "/esg/g" },
@@ -70,6 +79,7 @@ function News() {
         <Route path="/esg/s" component={SocialNews} />
         <Route path="/esg/g" component={GovernanceNews} />
         <Route path="/esg/keyword" component={Keyword} />
+        <Route path="/esg/notUser" component={NotUser} />
       </Routes>
     </>
   );
