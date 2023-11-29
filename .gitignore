@@ -11,6 +11,11 @@
 # production
 /build
 
+# json
+/src/assets/ESG사회_naver_news.json
+/src/assets/ESG환경_naver_news.json
+/src/assets/ESG지배구조_naver_news.json
+
 # misc
 .DS_Store
 .env.local

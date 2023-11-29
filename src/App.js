@@ -13,11 +13,12 @@ import Importance from "./pages/LearningPage/Importance";
 import Quiz from "./pages/LearningPage/Quiz";
 import ForumPage from "./pages/ForumPage/ForumPage";
 import Questions from "./pages/ForumPage/Questions";
-import ForumRegister from "./pages/ForumPage/ForumRegister";
+import Register from "./pages/ForumPage/Register";
 import NewsPage from "./pages/NewsPage/News";
 import EnvironmentNews from "./pages/NewsPage/EnvironmentNews";
 import SocialNews from "./pages/NewsPage/SocialNews";
 import GovernanceNews from "./pages/NewsPage/GovernanceNews";
+import Keyword from "./pages/NewsPage/Keyword";
 import { createGlobalStyle } from "styled-components";
 import "./App.css";
 import { AuthProvider, useAuth } from "./context/AuthContext";
@@ -53,6 +54,7 @@ function App() {
             <Route path="/esg/e" element={<EnvironmentNews />} />
             <Route path="/esg/s" element={<SocialNews />} />
             <Route path="/esg/g" element={<GovernanceNews />} />
+            <Route path="/esg/keyword" element={<Keyword />} />
             {/* element에 component 넣을 예정 */}
           </Route>
 
@@ -63,7 +65,7 @@ function App() {
             <Route path="/forum/social" element={"social"} />
             <Route path="/forum/governance" element={"governance"} />
             <Route path="/forum/tags" element={"tags"} />
-            <Route path="/forum/ForumRegister" element={<ForumRegister />} />
+            <Route path="/forum/register" element={<Register />} />
           </Route>
 
           <Route path="*" element={<ErrorPage />} />

@@ -3,7 +3,7 @@ import * as S from "../../styles/ForumPage/ForumRegister-style";
 import { useState } from "react";
 import axios from "axios";
 
-function ForumRegister() {
+function Register() {
   // state와 state를 변경하는 함수 선언
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
@@ -85,55 +85,33 @@ function ForumRegister() {
 
   return (
     <S.Wrapper>
-      <S.InputWrapper>
-        <S.Title>게시글 등록</S.Title>
-        <select
-          value={category}
-          onChange={onChangeCategory}
-          style={{
-            width: "920px",
-            color: "rgba(128, 128, 128, 1)",
-            height: "40px",
-            paddingLeft: "16px",
-            borderRadius: "5px",
-            border: "2px solid rgba(234, 234, 234, 1)",
-          }}
-        >
-          <option value="">카테고리 선택 (E, S, G, 기타 선택)</option>
-          <option value="E">E</option>
-          <option value="S">S</option>
-          <option value="G">G</option>
-          <option value="기타">기타</option>
-        </select>
-        <S.Error>{categoryError}</S.Error>
-      </S.InputWrapper>
-
-      <S.InputWrapper>
-        <S.Label>제목</S.Label>
-        <S.Subject
-          type="text"
-          placeholder="제목을 입력하세요"
-          onChange={onChangeTitle}
-        />
-        <S.Error>{titleError}</S.Error>
-      </S.InputWrapper>
-
-      <S.InputWrapper>
-        <S.Label>내용</S.Label>
-        <S.Contents
-          placeholder="질문 혹은 나누고 싶은 게시글 내용을 입력하세요"
-          onChange={onChangeContents}
-        />
-        <S.Error>{contentsError}</S.Error>
-      </S.InputWrapper>
-
-      <S.ButtonWrapper>
-        <S.SubmitButton onClick={onClickSubmit} isActive={isActive}>
-          🖋 작성하기
-        </S.SubmitButton>
-      </S.ButtonWrapper>
+      <S.Title>게시글 등록</S.Title>
+      <S.Select value={category} onChange={onChangeCategory}>
+        <option value="">카테고리 선택 (E, S, G, 기타 선택)</option>
+        <option value="E">E</option>
+        <option value="S">S</option>
+        <option value="G">G</option>
+        <option value="기타">기타</option>
+      </S.Select>
+      <S.Error>{categoryError}</S.Error>
+      <S.Label>제목</S.Label>
+      <S.Subject
+        type="text"
+        placeholder="제목을 입력하세요"
+        onChange={onChangeTitle}
+      />
+      <S.Error>{titleError}</S.Error>
+      <S.Label>내용</S.Label>
+      <S.Contents
+        placeholder="질문 혹은 나누고 싶은 게시글 내용을 입력하세요"
+        onChange={onChangeContents}
+      />
+      <S.Error>{contentsError}</S.Error>
+      <S.SubmitButton onClick={onClickSubmit} isActive={isActive}>
+        🖋 작성하기
+      </S.SubmitButton>
     </S.Wrapper>
   );
 }
 
-export default ForumRegister;
+export default Register;

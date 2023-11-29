@@ -8,7 +8,7 @@ const PaginationWrapper = styled.div`
   color: #0291db;
   .page-btn {
     font-size: 1.5rem;
-    margin: 2rem 0.5rem 0 0.5rem;
+    margin: 0 0.5rem 0 0.5rem;
     cursor: pointer;
     padding: 0.5rem 0.7rem;
     border: 1px solid #0291db;
