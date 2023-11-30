@@ -80,7 +80,7 @@ function Register() {
         await axios.post(`/api/forum/publish/${ID}`, postData);
         console.log(postData);
         alert("게시글이 성공적으로 등록되었습니다.");
-        navigate("/api/forum/questions");
+        navigate("/forum/questions");
       } catch (error) {
         console.log("등록 에러 발생-------------------------");
         console.error(error);
