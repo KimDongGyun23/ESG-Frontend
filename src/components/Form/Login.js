@@ -40,7 +40,7 @@ function Login() {
     // 이메일과 비밀번호 입력 조건 만족 시, 로그인 진행
     if (!validationErrors.email && !validationErrors.password) {
       axios
-        .post("/login", dataToSend)
+        .post("login", dataToSend)
         .then((res) => {
           console.log(res.data.message); // 백엔드에서 보내는 로그인 성공
           console.log("백엔드에서 보낸 access token: " + res.data.access_token);
