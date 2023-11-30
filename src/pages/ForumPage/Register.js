@@ -77,7 +77,7 @@ function Register() {
         console.log("제목 출력: ", postData.title);
         console.log("내용출력: ", postData.detail);
         console.log("선택한 카테고리 출력: ", postData.tags);
-        await axios.post(`/forum/publish/${ID}`, postData);
+        await axios.post(`/api/forum/publish/${ID}`, postData);
         console.log(postData);
         alert("게시글이 성공적으로 등록되었습니다.");
         navigate("/api/forum/questions");
