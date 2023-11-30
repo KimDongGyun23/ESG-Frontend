@@ -75,7 +75,7 @@ function Login() {
    */
   return (
     <S.FormContainer>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} method="POST" action="/login">
         <Form.Group controlId="formEmail">
           <Form.Label>이메일 주소</Form.Label>
           <S.InputBox>
