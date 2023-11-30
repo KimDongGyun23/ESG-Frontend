@@ -1,9 +1,13 @@
 import React from "react";
 import * as S from "../../styles/ForumPage/ForumRegister-style";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Register() {
+  const ID = localStorage.getItem("userID");
+  const navigate = useNavigate();
+
   // state와 state를 변경하는 함수 선언
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
@@ -64,18 +68,19 @@ function Register() {
     if (title && contents && category) {
       try {
         const postData = {
-          userID: 0,
+          tags: Array.isArray(category) ? category : [category],
           title: title,
           detail: contents,
-          tags: category,
         };
-        const id = 12;
+        console.log(postData);
+        console.log("userID출력: ", postData.ID);
         console.log("제목 출력: ", postData.title);
         console.log("내용출력: ", postData.detail);
         console.log("선택한 카테고리 출력: ", postData.tags);
-        await axios.post("https://koreanjson.com/todos", postData);
+        await axios.post(`/forum/publish/${ID}`, postData);
+        console.log(postData);
         alert("게시글이 성공적으로 등록되었습니다.");
-        //router.push('/forum/forum-list')
+        navigate("/api/forum/questions");
       } catch (error) {
         console.log("등록 에러 발생-------------------------");
         console.error(error);

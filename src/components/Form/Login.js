@@ -50,7 +50,8 @@ function Login() {
             path: "/",
             sameSite: "strict",
           });
-
+          localStorage.clear();
+          localStorage.setItem("userID", res.data.ID);
           localStorage.setItem("nickname", res.data.NickName);
           localStorage.setItem("access-token", res.data.access_token);
           localStorage.setItem("interest", res.data.interest);

@@ -50,5 +50,5 @@
   "devDependencies": {
     "@jridgewell/sourcemap-codec": "^1.4.15"
   },
-  "proxy": "http://3.39.167.133:8080"
+  "proxy": "http://43.200.102.126:8080"
 }

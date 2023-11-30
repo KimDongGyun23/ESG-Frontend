@@ -7,41 +7,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Questions() {
-  let dummy = [
-    {
-      id: 0,
-      name: "Golanginya",
-      date: "2023/08/18 11:00",
-      title: "ESG의 E,S,G는 각각 무슨 단어를 뜻하는 건가요?",
-      description:
-        "ESG의 E,S,G가 무슨 뜻인지 궁금해요 처음 접하는 단어라 잘 모르겠어서 글 남깁니다.",
-    },
-    {
-      id: 1,
-      name: "Nikcname",
-      date: "2023/08/18 10:47",
-      title: "ESG 경영의 장기적 목표는 무엇인가요?",
-      description:
-        "장기적으로 어떠한 점을 기업을이 추구해서 ESG 경영을 하려는지 궁금합니다.",
-    },
-    {
-      id: 2,
-      name: "AizhanMaratovna",
-      date: "2023/08/17 10:47",
-      title: "팬데믹으로 인한 배경",
-      description:
-        "팬데믹이 ESG를 몰고 왔다고 하는데 발생 배경이 궁금합니다. 순차적으로 설명해주실 분 계신가요?",
-    },
-    {
-      id: 3,
-      name: "Lola",
-      date: "2023/08/18 10:47",
-      title: "미닝아웃의 뜻이 무엇인가요?",
-      description:
-        "미닝아웃 미닝아웃 하던데 ESG 관련 이 단어의 뜻이 무엇인지 알려주세요!",
-    },
-  ];
-
   const [boardList, setBoardList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -55,7 +20,7 @@ function Questions() {
     setCurrentPage(pageNumber);
   };
 
-  const filteredArticles = dummy.filter((boardList) => {
+  const filteredArticles = boardList.filter((boardList) => {
     const title = boardList.title ? boardList.title.toLowerCase() : "";
     const content = boardList.content ? boardList.content.toLowerCase() : "";
     const lowerCaseSearchKeyword = searchKeyword.toLowerCase();
@@ -69,42 +34,45 @@ function Questions() {
     indexOfLastArticle
   );
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const res = await axios.get("https://koreanjson.com/posts");
-  //       const _inputData = res.data.map((rowData) => ({
-  //         id: rowData.id,
-  //         title: rowData.title,
-  //         content: rowData.content,
-  //         date: rowData.createdAt,
-  //         // 추가 정보 삽입
-  //       }));
-  //       setBoardList(_inputData);
-  //       console.log("게시글 목록 받아오기 성공");
-  //       console.log(
-  //         "받아온 첫번째 boardList 출력 :: ",
-  //         res.data[0],
-  //         res.data[1]
-  //       );
-  //     } catch (e) {
-  //       console.error(e.message);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("/api/forum/list");
+        const dataArray = Object.values(res.data);
+        console.log(dataArray[1]);
+        const _inputData = dataArray[1].map((rowData) => ({
+          user_nickname: rowData.user_nickname,
+          title: rowData.title,
+          content: rowData.detail,
+          date: rowData.post_time,
+          // 추가 정보 삽입
+        }));
+        const reversedData = _inputData.reverse(); // 역순으로 정렬
+        setBoardList(reversedData);
+        console.log("게시글 목록 받아오기 성공");
+        console.log(
+          "받아온 첫번째 boardList 출력 :: ",
+          res.data[0],
+          res.data[1]
+        );
+      } catch (e) {
+        console.error(e.message);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
   // 데이터를 순회하며 카드 박스 내부에 각각의 데이터 삽입
   return (
     <>
       <Subnav />
       <S.Container>
-        {filteredCurrentArticles.map((element) => (
-          <S.Card key={element.id}>
+        {filteredCurrentArticles.map((element, idx) => (
+          <S.Card key={idx}>
             <S.Profile>
               <S.Img src={profileImg} alt="profile-img" />
               <div>
-                <p>{element.id}</p>
+                <p>{element.user_nickname}</p>
                 <p className="date">{element.date}</p>
               </div>
               <S.Kebab className="fa-solid fa-ellipsis-vertical" />
