@@ -9,6 +9,10 @@ function Header() {
   const { login, logout } = useAuth();
   const location = useLocation(); // 현재 경로 가져오기
   const cookie = getCookie("access-token");
+
+  // 정규 표현식을 사용하여 /esg/로 시작하는 페이지 여부 확인
+  const isESGPage = /^\/esg\//.test(location.pathname);
+
   return (
     <>
       <Navbar className="my-3" expand="md" data-bs-theme="light">
@@ -29,10 +33,7 @@ function Header() {
               >
                 HOME
               </S.NavLink>
-              <S.NavLink
-                href="/esg"
-                style={{ color: location.pathname === "/esg" && "#1389D0" }}
-              >
+              <S.NavLink href="/esg/" style={{ color: isESGPage && "#1389D0" }}>
                 나의ESG
               </S.NavLink>
               <S.NavLink

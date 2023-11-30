@@ -64,7 +64,6 @@ function App() {
             <Route path="/esg/g" element={<GovernanceNews />} />
             <Route path="/esg/keyword" element={<Keyword />} />
             <Route path="/esg/notUser" element={<NotUser />} />
-            {/* element에 component 넣을 예정 */}
           </Route>
 
           <Route path="/forum" element={<ForumPage />}>
