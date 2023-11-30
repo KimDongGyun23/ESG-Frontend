@@ -50,3 +50,24 @@ export const Image = styled.img`
   max-height: 100%;
   margin-right: 0.5rem;
 `;
+
+export const StyledLoginButton = styled.div`
+  padding: 0.6rem;
+  background-color: white;
+  border: 1px solid #009fff;
+  border-radius: 2rem;
+  color: #009fff;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background: #009fff;
+    color: white;
+  }
+
+  &:focus {
+    outline: none;
+    background: white;
+    color: #009fff;
+  }
+`;

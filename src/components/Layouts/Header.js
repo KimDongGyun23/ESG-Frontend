@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import * as S from "../../styles/Layouts/Header.style";
 import { useLocation } from "react-router-dom";
@@ -59,7 +60,7 @@ function Header() {
               </S.NavLink>
             </Nav>
 
-            <Nav className="text-end">
+            {/*<Nav className="text-end">
               {cookie ? (
                 <button onClick={logout}>로그아웃</button>
               ) : (
@@ -67,7 +68,19 @@ function Header() {
                   로그인
                 </Nav.Link>
               )}
-            </Nav>
+              </Nav>*/}
+
+            <Nav className="text-end">
+            <S.StyledLoginButton>
+            {cookie ? (
+                <button onClick={logout}>로그아웃</button>
+              ) : (
+                <Link to="/login" onClick={login}>
+                  로그인
+                </Link>
+              )}
+            </S.StyledLoginButton>
+          </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

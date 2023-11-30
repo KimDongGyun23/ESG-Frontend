@@ -176,7 +176,6 @@ function Quiz() {
               </S.ButtonWrapper>
             </>
           ) : (
-            // 이 부분 수정 필요
             <S.ResultContainer>
               <S.Label>ESG QUIZ</S.Label>
               <S.LabelScore>최종 점수는 {score}점입니다!</S.LabelScore>
@@ -193,7 +192,6 @@ function Quiz() {
               <strong> 남은 시간: {time} 초</strong>
             </S.TimerContainer>
           ) : null}{" "}
-          {/* 모든 문제를 다 푼 경우에는 숨김 */}
         </S.TimerWrapper>
       </S.Container>
     </>

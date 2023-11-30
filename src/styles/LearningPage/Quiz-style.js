@@ -3,21 +3,23 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  column-gap: 30px;
+  column-gap: 1rem;
   margin-top: 2rem;
-  margin-left: 2rem;
+  
+
+  @media (max-width: 768px) {
+    
+  }
 `;
 
 export const QuizWrapper = styled.div`
-  padding-top: 10px;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-weight: bolder;
   color: #006fc0;
-  margin-right: 2%;
-  margin-bottom: 1rem;
 `;
 export const SubmitButton = styled.button`
   width: 179px;
@@ -39,7 +41,7 @@ export const CustomNextButton = styled(SubmitButton)`
   letter-spacing: 0.02em;
   font-size: 1rem;
   font-weight: 900;
-  margin: 0 2rem 0 0;
+  margin: 0 2rem;
   color: #fff;
   border-radius: 15px;
   background-color: #006fc0;
@@ -76,28 +78,33 @@ export const Quiz = styled.div`
 export const Option = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 5rem;
+  margin-top: 4rem;
   gap: 3px;
   flex-direction: column;
+  width: 7rem;
+  font-size: 1.5rem;
+  height: 3rem;
 `;
 
 export const StyledBtn = styled.button`
+  display: flex;
   margin: 1rem;
   font-size: 1.6rem;
   padding: 0.5rem;
   border-radius: 2rem;
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.23);
   flex-direction: column;
-  border-color: gray;
+  border-color: lightgray;
   background-color: white;
   color: black;
-  transition: background-color 0.3s, color 0.3s; /* 효과 지속 시간 설정 */
+  transition: background-color 0.3s,color 0.3s;
+  align-items: center;
 
   &:hover,
   &:focus {
     background-color: orange;
-    color: white; /* hover 상태일 때 텍스트 색상 변경 */
+    color: white; 
   }
 `;
 
@@ -112,18 +119,18 @@ export const TimerContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 30px;
-  margin-top: 50px;
+  margin-top: 5rem;
 `;
 
 export const MaskContainer = styled.div`
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   background-color: #eee;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   box-shadow: 1px 1px 7px 2px darkgray;
+  }
 `;
 
 export const Mask = styled.div`
@@ -166,8 +173,7 @@ export const SolvedContainer = styled.div`
 `;
 
 export const Barbox = styled.div`
-  margin-top: 10px;
-  width: 150px;
+  width: 10rem;
   height: 15px;
   background-color: white;
   border-radius: 10px;
@@ -236,9 +242,8 @@ export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   -webkit-box-pack: center;
-  padding-top: 80px;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 1rem;
 `;
 
 export const InputWrapper = styled.div`
