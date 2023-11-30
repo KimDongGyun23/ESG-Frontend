@@ -10,10 +10,7 @@ function ForumPage() {
 
   const subnav = [
     { name: "Questions", url: "/forum/questions" },
-    { name: "E (Environment)", url: "/forum/environment" },
-    { name: "S (Social)", url: "/forum/social" },
-    { name: "G (Governance)", url: "/forum/governance" },
-    { name: "Tags", url: "/forum/tags" },
+    { name: "글 쓰기", url: "/forum/register" },
   ];
 
   // 클릭한 요소에 focused 클래스를 부여하여 이벤츠 처리
