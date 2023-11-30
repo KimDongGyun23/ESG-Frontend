@@ -51,7 +51,6 @@ function Login() {
             sameSite: "strict",
           });
 
-          localStorage.clear();
           localStorage.setItem("nickname", res.data.NickName);
           localStorage.setItem("access-token", res.data.access_token);
           localStorage.setItem("interest", res.data.interest);
