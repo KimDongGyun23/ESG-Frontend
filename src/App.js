@@ -34,7 +34,7 @@ const interest = localStorage.getItem("interest");
 if (interest === null) {
   defaultRoute = "/esg/notUser";
 } else {
-  defaultRoute = interest ? `/esg/${interest.toLowerCase()}` : "/esg";
+  defaultRoute = interest ? `/esg/${interest.toLowerCase()}` : "/esg/";
 }
 
 // 부트스트랩, 스타일 컴포넌트, 리액트 라우터 돔 설치

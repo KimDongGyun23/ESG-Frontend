@@ -12,7 +12,7 @@ function Header() {
 
   // 정규 표현식을 사용하여 /esg/로 시작하는 페이지 여부 확인
   const isESGPage = /^\/esg\//.test(location.pathname);
-  const isLearingPage = /^\/learning\//.test(location.pathname);
+  const isLearningPage = /^\/learning\//.test(location.pathname);
   const isForumPage = /^\/forum\//.test(location.pathname);
   return (
     <>
@@ -39,7 +39,7 @@ function Header() {
               </S.NavLink>
               <S.NavLink
                 href="/learning/"
-                style={{ color: isLearingPage && "#1389D0" }}
+                style={{ color: isLearningPage && "#1389D0" }}
               >
                 ESG학습
               </S.NavLink>
