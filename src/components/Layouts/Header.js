@@ -60,20 +60,10 @@ function Header() {
               </S.NavLink>
             </Nav>
 
-            {/*<Nav className="text-end">
-              {cookie ? (
-                <button onClick={logout}>로그아웃</button>
-              ) : (
-                <Nav.Link onClick={login} href="/login">
-                  로그인
-                </Nav.Link>
-              )}
-              </Nav>*/}
-
             <Nav className="text-end">
             <S.StyledLoginButton>
             {cookie ? (
-                <button onClick={logout}>로그아웃</button>
+                <Link to="/" onClick={logout}>로그아웃</Link>
               ) : (
                 <Link to="/login" onClick={login}>
                   로그인
