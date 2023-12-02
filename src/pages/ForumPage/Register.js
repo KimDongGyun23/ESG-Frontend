@@ -113,7 +113,7 @@ function Register() {
       />
       <S.Error>{contentsError}</S.Error>
       <S.SubmitButton onClick={onClickSubmit} isActive={isActive}>
-        🖋 작성하기
+        <i className="fa-solid fa-pencil fa-lg" /> 작성하기
       </S.SubmitButton>
     </S.Wrapper>
   );
