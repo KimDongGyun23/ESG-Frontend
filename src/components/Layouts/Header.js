@@ -61,16 +61,20 @@ function Header() {
             </Nav>
 
             <Nav className="text-end">
-            <S.StyledLoginButton>
-            {cookie ? (
-                <Link to="/" onClick={logout}>로그아웃</Link>
-              ) : (
-                <Link to="/login" onClick={login}>
-                  로그인
-                </Link>
-              )}
-            </S.StyledLoginButton>
-          </Nav>
+              <S.StyledLoginButton>
+                {cookie ? (
+                  <Link to="/" onClick={logout}>
+                    로그아웃{"      "}{" "}
+                    <i className="fa-solid fa-right-from-bracket fa-lg" />
+                  </Link>
+                ) : (
+                  <Link to="/login" onClick={login}>
+                    <i className="fa-solid fa-right-to-bracket fa-lg" />
+                    {"      "}로그인
+                  </Link>
+                )}
+              </S.StyledLoginButton>
+            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

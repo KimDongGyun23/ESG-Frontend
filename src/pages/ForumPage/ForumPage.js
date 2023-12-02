@@ -21,7 +21,12 @@ function ForumPage() {
         {subnav.map((element, index) => (
           <S.List key={index} className={index === currentTab ? "focused" : ""}>
             <Link to={element.url} onClick={() => setCurrentTab(index)}>
-              <i className="fa-solid fa-tag" /> {element.name}
+              {index === 0 ? (
+                <i className="fa-solid fa-paste fa-lg" />
+              ) : (
+                <i className="fa-solid fa-pen-to-square fa-lg" />
+              )}{" "}
+              {element.name}
             </Link>
           </S.List>
         ))}

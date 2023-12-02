@@ -11,3 +11,11 @@ export const NewsListBlock = styled.div`
     padding-right: 1rem;
   }
 `;
+
+export const NewsBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const LikeBtnContainer = styled.div`
+  margin-left: auto;
+`;

@@ -59,6 +59,7 @@ export const StyledLoginButton = styled.div`
   color: #009fff;
   transition: background 0.3s, color 0.3s;
   cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
   &:hover {
     background: #009fff;

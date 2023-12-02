@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import NewsItem from "./NewsItem";
 import Loading from "../../components/Layouts/Loading";
 import * as S from "../../styles/News/NewsList-style";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Link } from "react";
 import Pagination from "../../components/Buttons/Pagination";
 import SearchBar from "../../components/Form/SearchBar";
+import { useLikedArticles } from "../../context/LikedArticlesContext";
+import LikeBtn from "../../components/Buttons/LikeBtn";
 
 const NewsListE = () => {
   const [articles, setArticles] = useState([]);
@@ -11,6 +14,8 @@ const NewsListE = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchKeyword, setSearchKeyword] = useState("");
   const articlesPerPage = 5;
+  const { addLikedArticle } = useLikedArticles();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // async를 사용하는 함수 따로 선언
@@ -37,6 +42,13 @@ const NewsListE = () => {
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  const handleLikeClick = (likedArticle) => {
+    console.log("Liked Article:", likedArticle);
+    addLikedArticle(likedArticle);
+    alert("해당 뉴스를 찜했습니다!");
+    //navigate("/esg/like");
   };
 
   // 대기 중일 때
@@ -74,7 +86,12 @@ const NewsListE = () => {
           onChange={(value) => setSearchKeyword(value)}
         />
         {filteredCurrentArticles.map((article) => (
-          <NewsItem key={article.link} article={article} />
+          <S.NewsBox key={article.link}>
+            <S.LikeBtnContainer>
+              <LikeBtn onClick={() => handleLikeClick(article)} />
+            </S.LikeBtnContainer>
+            <NewsItem article={article} />
+          </S.NewsBox>
         ))}
         <Pagination
           currentPage={currentPage}
