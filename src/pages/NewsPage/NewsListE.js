@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import NewsItem from "./NewsItem";
 import Loading from "../../components/Layouts/Loading";
 import * as S from "../../styles/News/NewsList-style";
@@ -15,7 +14,6 @@ const NewsListE = () => {
   const [searchKeyword, setSearchKeyword] = useState("");
   const articlesPerPage = 5;
   const { addLikedArticle } = useLikedArticles();
-  const navigate = useNavigate();
 
   useEffect(() => {
     // async를 사용하는 함수 따로 선언
@@ -35,10 +33,6 @@ const NewsListE = () => {
   // 페이지 이동 함수
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-  const currentArticles = articles.slice(
-    indexOfFirstArticle,
-    indexOfLastArticle
-  );
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -77,7 +71,6 @@ const NewsListE = () => {
     indexOfLastArticle
   );
 
-  // articles 값이 유효할 때
   return (
     <>
       <S.NewsListBlock>

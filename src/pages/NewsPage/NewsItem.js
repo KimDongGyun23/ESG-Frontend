@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NewsItemBlock = styled.div`
+export const NewsItemBlock = styled.div`
   display: flex;
   justify-content: center;
   border: 1px solid lightgray;

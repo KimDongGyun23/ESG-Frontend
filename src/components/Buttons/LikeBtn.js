@@ -17,7 +17,7 @@ function LikeBtn({ onClick }) {
   const HeartBtn = styled.button`
     margin-bottom: 1rem;
     margin-top: 2rem;
-    max-width: 13rem;
+    max-width: 10rem;
     background-color: transparent;
     border-radius: 1rem;
     padding: 0.5rem 0.8rem;
@@ -28,7 +28,7 @@ function LikeBtn({ onClick }) {
     transition: transform 0.3s ease; /* 부드러운 애니메이션을 위한 트랜지션 설정 */
 
     strong {
-      font-size: 1.5rem;
+      font-size: 1rem;
       color: gray;
     }
     &:hover {
@@ -38,7 +38,7 @@ function LikeBtn({ onClick }) {
 
   return (
     <HeartBtn onClick={onClick}>
-      <i className="fa-solid fa-heart fa-2x" />
+      <i className="fa-solid fa-heart fa-lg" />
       <strong> 뉴스 찜하기</strong>
     </HeartBtn>
   );
