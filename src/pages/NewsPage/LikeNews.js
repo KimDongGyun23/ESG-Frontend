@@ -30,14 +30,24 @@ const NewsItem = styled.div`
   }
 `;
 
+const NoLikedNews = styled.p`
+  font-size: 1.2rem;
+  color: red;
+  margin-top: 2rem;
+`;
+
 const LikeNews = () => {
   const { likedArticles } = useLikedArticles();
-  console.log(likedArticles[0].title);
+
+  if (likedArticles.length === 0) {
+    return <NoLikedNews>찜한 뉴스가 없습니다.</NoLikedNews>;
+  }
+
   return (
     <S.NewsListBlock>
       <LikeNewsContainer>
         {likedArticles.map((article) => (
-          <NewsItem>
+          <NewsItem key={article.id}>
             <h2>
               <a href={article.link} target="_blank" rel="noopener noreferrer">
                 {article.title}

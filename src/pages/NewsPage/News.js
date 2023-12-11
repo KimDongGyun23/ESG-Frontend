@@ -74,7 +74,7 @@ function News() {
             ? ""
             : currentTab ===
               subnav.findIndex((item) => item.url === "/esg/like")
-            ? `${nickname}님이 찜한 뉴스입니다.`
+            ? "찜한 뉴스입니다."
             : "파란색 제목을 누르면 해당 뉴스로 이동합니다!"
         }
       />
