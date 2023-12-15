@@ -11,6 +11,7 @@ function LearningPage() {
     { name: "ESG 개념", url: "/learning/concept" },
     { name: "ESG 중요성", url: "/learning/importance" },
     { name: "ESG 퀴즈", url: "/learning/quiz" },
+    { name: "ESG 평가등급", url: "/learning/grade" },
   ];
 
   const indexHandler = (index) => setCurrentTab(index);

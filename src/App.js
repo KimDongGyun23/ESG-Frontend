@@ -10,6 +10,7 @@ import LearningPage from "./pages/LearningPage/LearningPage";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Concept from "./pages/LearningPage/Concept";
 import Importance from "./pages/LearningPage/Importance";
+import Grade from "./pages/LearningPage/Grade";
 import Quiz from "./pages/LearningPage/Quiz";
 import ForumPage from "./pages/ForumPage/ForumPage";
 import Questions from "./pages/ForumPage/Questions";
@@ -56,6 +57,7 @@ function App() {
               <Route index element={<Concept />} />
               <Route path="/learning/concept" element={<Concept />} />
               <Route path="/learning/importance" element={<Importance />} />
+              <Route path="/learning/grade" element={<Grade />} />
               <Route path="/learning/quiz" element={<Quiz />} />
             </Route>
 
